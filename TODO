@@ -1,0 +1,28 @@
+To Do
+-----
+
+Code Cleanup: 
+	Remove useless files: swutil.c
+	Restructure game to be state based - avoids all the horrible crap
+		with longjmp at the moment
+Network:
+	Ability to abort server
+	Network disconnect should bring you back to the title screen
+		Also on failure to connect
+	> 2 Players, Teams
+	Extra game modes -- Capture the flag etc
+Finish GNOME port
+	Add GConf support
+	Fix starting network games from the menus
+
+Bug: If you crash into the last building in a level, the level exit sequence
+	runs with you inside the building rubble (!)
+
+Ideas
+-----
+
+Custom levels
+DOS Port? probably wouldnt be too hard infact
+Hi score table?
+Reconfigurable keys
+
