@@ -1,5 +1,7 @@
 
 autom4te.cache
+aclocal.m4
+stamp-h1
 
 config.log
 config.h
@@ -19,4 +21,3 @@ Makefile
 *.a
 *.o
 sopwith
-
