@@ -172,7 +172,7 @@ static void synchronize()
 
 	sprintf(buf, PROTOHEADER "%i", !player);
 
-	settimeout(2000);
+	settimeout();
 
 	for (p = buf; *p;) {
 		int c;

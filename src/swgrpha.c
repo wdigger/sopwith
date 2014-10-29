@@ -37,6 +37,7 @@
 #include "swstbar.h"
 #include "swsymbol.h"
 #include "swutil.h"
+#include "swend.h"
 
 /*---------------------------------------------------------------------------
 

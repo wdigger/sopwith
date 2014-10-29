@@ -37,6 +37,7 @@
 #include "swsound.h"
 #include "swtitle.h"
 #include "swutil.h"
+#include "video.h"
 
 // sdh: framerate control
 
