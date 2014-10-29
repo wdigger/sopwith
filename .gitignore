@@ -1,13 +1,16 @@
 
-aclocal.m4
 autom4te.cache
-autotools
 
-config.hin
 config.log
 config.h
 config.status
+config.h.in
 configure
+
+depcomp
+install-sh
+missing
+compile
 
 Makefile.in
 Makefile
@@ -16,4 +19,4 @@ Makefile
 *.a
 *.o
 sopwith
-stamp-h1
+
