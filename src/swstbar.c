@@ -156,7 +156,7 @@ static void dispmap()
 
 	for (x = 0; x < MAX_X; ++x) {
 
-		if (ground[x] > maxh)
+		if ((int)ground[x] > maxh)
 			maxh = ground[x];
 
 		++dx;

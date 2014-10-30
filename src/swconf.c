@@ -223,7 +223,7 @@ void swsaveconf()
 
 		fprintf(fs, "%s", confoptions[i].name);
 
-		for (n=3-strlen(confoptions[i].name)/8; n > 0; --n)
+		for (n=3-(int)strlen(confoptions[i].name)/8; n > 0; --n)
 			fprintf(fs, "\t");
 		
 		switch (confoptions[i].type) {

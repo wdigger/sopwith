@@ -474,9 +474,9 @@ void swcollsn()
 		if ((otype == PLANE
 		     && ob->ob_state != FINISHED
 		     && ob->ob_state != WAITING
-		     && ob->ob_y < (ground[ob->ob_x + 8] + 24))
+		     && ob->ob_y < (int)(ground[ob->ob_x + 8] + 24))
 		    || ((otype == BOMB || otype == MISSILE)
-			&& ob->ob_y < (ground[ob->ob_x + 4] + 12)))
+			&& ob->ob_y < (int)(ground[ob->ob_x + 4] + 12)))
 			tstcrash(ob);
 	}
 

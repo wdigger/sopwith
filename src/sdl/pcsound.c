@@ -45,7 +45,7 @@ static float current_freq = 0xff;
 static inline float square_wave(float time)
 {
 	int l = (int) time;
-	return time - l < 0.5 ? 1 : 0;
+	return (float)(time - l < 0.5 ? 1 : 0);
 }
 
 // callback function to generate sound
@@ -65,12 +65,12 @@ static void snd_callback(void *userdata, Uint8 * stream, int len)
 	// if we have changed frequency since last time, we need
 	// to adjust lasttime to the new frequency
 
-	lasttime *= lastfreq / current_freq;
+	lasttime *= (int)(lastfreq / current_freq);
 
 	for (i = 0; i < len; ++i) {
 		if (speaker_on) {
 			stream[i] =
-			    127 * square_wave(current_freq *
+			    127 * (int)square_wave(current_freq *
 					      (i + lasttime));
 		} else {
 			stream[i] = 0;
@@ -164,7 +164,7 @@ void Speaker_Init()
 
 void Speaker_Sound(int freq, int duration)
 {
-	int duration_clocks = duration * 1000 / 18.2;
+	int duration_clocks = (int)(duration * 1000 / 18.2);
 	int endtime;
 
 	// turn speaker on
@@ -176,7 +176,7 @@ void Speaker_Sound(int freq, int duration)
 	// delay
 
 	for (endtime = SDL_GetTicks() + duration_clocks;
-	     SDL_GetTicks() < endtime;);
+	     SDL_GetTicks() < (Uint32)endtime;);
 
 	// turn speaker off
 

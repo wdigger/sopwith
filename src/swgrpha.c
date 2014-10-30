@@ -142,7 +142,6 @@ void swputsym(int x, int y, OBJECTS * ob)
 void swdisp()
 {
 	OBJECTS *ob;
-	int lag;
 
 	Vid_ClearBuf();
 

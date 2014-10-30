@@ -234,7 +234,7 @@ static void Vid_SetMode()
 		exit(-1);
 	}
 
-	srand(time(NULL));
+	srand((int)time(NULL));
 	set_icon(symbol_plane[rand() % 2][rand() % 16]);
 
 	w = SCR_WDTH;
@@ -271,7 +271,7 @@ static void Vid_SetMode()
 	SDL_ShowCursor(0);
 }
 
-void Vid_Shutdown()
+void Vid_Shutdown(void)
 {
 	if (!initted)
 		return;
@@ -428,8 +428,6 @@ static void getevents()
 
 int Vid_GetKey()
 {
-	int l;
-
 	getevents();
 	
 	return input_buffer_pop();

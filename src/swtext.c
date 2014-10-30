@@ -120,7 +120,7 @@ void swgets(char *s, int max)
 
 		cur_x = or_x;
 		cur_y = or_y;
-		erase_len = strlen(s);
+		erase_len = (int)strlen(s);
 		swputs(s);
 		Vid_Update();
 
@@ -128,7 +128,7 @@ void swgets(char *s, int max)
 
 		while (!(c = swgetc()));
 
-		if (isprint(c) && strlen(s) < max) {
+		if (isprint(c) && (int)strlen(s) < max) {
 			s[strlen(s) + 1] = '\0';
 			s[strlen(s)] = c;
 		} else if (c == '\b') {

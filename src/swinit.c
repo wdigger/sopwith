@@ -298,7 +298,7 @@ OBJECTS *initpln(OBJECTS * obp)
 	maxx = ob->ob_x + 20;
 	height = 0;
 	for (x = minx; x <= maxx; ++x)
-		if (ground[x] > height)
+		if ((int)ground[x] > height)
 			height = ground[x];
 	ob->ob_y = height + 13;
 	ob->ob_lx = ob->ob_ly = ob->ob_speed = ob->ob_flaps = ob->ob_accel
@@ -641,9 +641,9 @@ static void inittarg()
 		minh = 999;
 		maxh = 0;
 		for (x = minx; x <= maxx; ++x) {
-			if (ground[x] > maxh)
+			if ((int)ground[x] > maxh)
 				maxh = ground[x];
-			if (ground[x] < minh)
+			if ((int)ground[x] < minh)
 				minh = ground[x];
 		}
 		aveh = (minh + maxh) / 2;
