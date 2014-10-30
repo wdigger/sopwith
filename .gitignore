@@ -21,3 +21,10 @@ Makefile
 *.a
 *.o
 sopwith
+
+*.obj
+msvc/Debug
+*.ncb
+*.sln
+*.suo
+*.user

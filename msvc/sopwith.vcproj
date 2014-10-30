@@ -1,236 +1,465 @@
-<?xml version="1.0" encoding = "Windows-1252"?>
+<?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="7.00"
+	Version="9,00"
 	Name="sopwith"
 	ProjectGUID="{8439E3F1-3A2E-40F9-AE34-5FAA27345892}"
-	Keyword="AtlProj">
+	Keyword="AtlProj"
+	TargetFrameworkVersion="131072"
+	>
 	<Platforms>
 		<Platform
-			Name="Win32"/>
+			Name="Win32"
+		/>
 	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="Debug"
 			IntermediateDirectory="Debug"
 			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC70.vsprops"
 			UseOfATL="1"
-			ATLMinimizesCRunTimeLibraryUsage="FALSE"
-			CharacterSet="2">
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
 			<Tool
-				Name="VCCLCompilerTool"
-				Optimization="0"
-				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;_ATL_ATTRIBUTES"
-				MinimalRebuild="TRUE"
-				BasicRuntimeChecks="3"
-				RuntimeLibrary="3"
-				UsePrecompiledHeader="0"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="TRUE"
-				DebugInformationFormat="4"
-				CompileAs="1"/>
+				Name="VCPreBuildEventTool"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCCustomBuildTool"
+			/>
 			<Tool
-				Name="VCLinkerTool"
-				IgnoreImportLibrary="TRUE"
-				OutputFile="$(OutDir)/sopwith.exe"
-				LinkIncremental="2"
-				MergedIDLBaseFileName="_sopwith.idl"
-				GenerateDebugInformation="TRUE"
-				SubSystem="1"
-				ImportLibrary="$(OutDir)/sopwith.lib"
-				TargetMachine="1"/>
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
 			<Tool
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="_DEBUG"
-				MkTypLibCompatible="FALSE"
+				MkTypLibCompatible="false"
 				TargetEnvironment="1"
-				GenerateStublessProxies="TRUE"
+				GenerateStublessProxies="true"
 				TypeLibraryName="$(IntDir)/sopwith.tlb"
 				HeaderFileName="sopwith.h"
 				DLLDataFileName=""
 				InterfaceIdentifierFileName="sopwith_i.c"
-				ProxyFileName="sopwith_p.c"/>
+				ProxyFileName="sopwith_p.c"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"
-				Description="Performing registration"
-				CommandLine="regsvr32 /s /c &quot;$(TargetPath)&quot;"/>
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)\..\src&quot;;&quot;$(ProjectDir)&quot;"
+				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;_ATL_ATTRIBUTES;_CRT_SECURE_NO_WARNINGS"
+				MinimalRebuild="true"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="3"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				DebugInformationFormat="4"
+				CompileAs="1"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
-			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_DEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories="$(IntDir)"/>
+				AdditionalIncludeDirectories="$(IntDir)"
+			/>
 			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
-				Name="VCWebDeploymentTool"/>
+				Name="VCLinkerTool"
+				IgnoreImportLibrary="true"
+				AdditionalDependencies="SDLmain.lib SDL.lib"
+				OutputFile="$(OutDir)/sopwith.exe"
+				LinkIncremental="2"
+				MergedIDLBaseFileName="_sopwith.idl"
+				GenerateDebugInformation="true"
+				SubSystem="1"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OutDir)/sopwith.lib"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="Release"
 			IntermediateDirectory="Release"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC70.vsprops"
 			UseOfATL="1"
-			ATLMinimizesCRunTimeLibraryUsage="FALSE"
-			CharacterSet="2">
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
 			<Tool
-				Name="VCCLCompilerTool"
-				InlineFunctionExpansion="1"
-				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;_ATL_ATTRIBUTES"
-				StringPooling="TRUE"
-				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="TRUE"
-				UsePrecompiledHeader="3"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="TRUE"
-				DebugInformationFormat="3"/>
+				Name="VCPreBuildEventTool"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCCustomBuildTool"
+			/>
 			<Tool
-				Name="VCLinkerTool"
-				IgnoreImportLibrary="TRUE"
-				OutputFile="$(OutDir)/sopwith.dll"
-				LinkIncremental="1"
-				MergedIDLBaseFileName="_sopwith.idl"
-				GenerateDebugInformation="TRUE"
-				SubSystem="2"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				ImportLibrary="$(OutDir)/sopwith.lib"
-				TargetMachine="1"/>
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
 			<Tool
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="NDEBUG"
-				MkTypLibCompatible="FALSE"
+				MkTypLibCompatible="false"
 				TargetEnvironment="1"
-				GenerateStublessProxies="TRUE"
+				GenerateStublessProxies="true"
 				TypeLibraryName="$(IntDir)/sopwith.tlb"
 				HeaderFileName="sopwith.h"
 				DLLDataFileName=""
 				InterfaceIdentifierFileName="sopwith_i.c"
-				ProxyFileName="sopwith_p.c"/>
+				ProxyFileName="sopwith_p.c"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"
-				Description="Performing registration"
-				CommandLine="regsvr32 /s /c &quot;$(TargetPath)&quot;"/>
+				Name="VCCLCompilerTool"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)\..\src&quot;;&quot;$(ProjectDir)&quot;"
+				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;_ATL_ATTRIBUTES;_CRT_SECURE_NO_WARNINGS"
+				StringPooling="true"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="true"
+				UsePrecompiledHeader="2"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
-			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="NDEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories="$(IntDir)"/>
+				AdditionalIncludeDirectories="$(IntDir)"
+			/>
 			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
-				Name="VCWebDeploymentTool"/>
+				Name="VCLinkerTool"
+				IgnoreImportLibrary="true"
+				AdditionalDependencies="SDLmain.lib SDL.lib"
+				OutputFile="$(OutDir)/sopwith.dll"
+				LinkIncremental="1"
+				MergedIDLBaseFileName="_sopwith.idl"
+				GenerateDebugInformation="true"
+				SubSystem="2"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OutDir)/sopwith.lib"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 	</Configurations>
+	<References>
+	</References>
 	<Files>
 		<Filter
 			Name="Source Files"
-			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm">
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm"
+			>
 			<File
-				RelativePath="src\sdl\pcsound.c">
+				RelativePath="..\src\sdl\main.c"
+				>
 			</File>
 			<File
-				RelativePath="sdl.lib">
+				RelativePath="..\src\sdl\pcsound.c"
+				>
 			</File>
 			<File
-				RelativePath="src\swasynio.c">
+				RelativePath="..\src\swasynio.c"
+				>
 			</File>
 			<File
-				RelativePath="src\swauto.c">
+				RelativePath="..\src\swauto.c"
+				>
 			</File>
 			<File
-				RelativePath="src\swcollsn.c">
+				RelativePath="..\src\swcollsn.c"
+				>
 			</File>
 			<File
-				RelativePath="src\swconf.c">
+				RelativePath="..\src\swconf.c"
+				>
 			</File>
 			<File
-				RelativePath="src\swdisp.c">
+				RelativePath="..\src\swdisp.c"
+				>
 			</File>
 			<File
-				RelativePath="src\swend.c">
+				RelativePath="..\src\swend.c"
+				>
 			</File>
 			<File
-				RelativePath="src\swgames.c">
+				RelativePath="..\src\swgames.c"
+				>
 			</File>
 			<File
-				RelativePath="src\swground.c">
+				RelativePath="..\src\swground.c"
+				>
 			</File>
 			<File
-				RelativePath="src\swgrpha.c">
+				RelativePath="..\src\swgrpha.c"
+				>
 			</File>
 			<File
-				RelativePath="src\swinit.c">
+				RelativePath="..\src\swinit.c"
+				>
 			</File>
 			<File
-				RelativePath="src\swmain.c">
+				RelativePath="..\src\swmain.c"
+				>
 			</File>
 			<File
-				RelativePath="src\swmisc.c">
+				RelativePath="..\src\swmove.c"
+				>
 			</File>
 			<File
-				RelativePath="src\swmove.c">
+				RelativePath="..\src\swobject.c"
+				>
 			</File>
 			<File
-				RelativePath="src\swobject.c">
+				RelativePath="..\src\swsound.c"
+				>
 			</File>
 			<File
-				RelativePath="src\swsound.c">
+				RelativePath="..\src\swsplat.c"
+				>
 			</File>
 			<File
-				RelativePath="src\swsymbol.c">
+				RelativePath="..\src\swstbar.c"
+				>
 			</File>
 			<File
-				RelativePath="src\swtitle.c">
+				RelativePath="..\src\swsymbol.c"
+				>
 			</File>
 			<File
-				RelativePath="src\swutil.c">
+				RelativePath="..\src\swtext.c"
+				>
 			</File>
 			<File
-				RelativePath="src\tcpcomm.c">
+				RelativePath="..\src\swtitle.c"
+				>
 			</File>
 			<File
-				RelativePath="src\sdl\timer.c">
+				RelativePath="..\src\swutil.c"
+				>
 			</File>
 			<File
-				RelativePath="src\sdl\video.c">
+				RelativePath="..\src\tcpcomm.c"
+				>
+			</File>
+			<File
+				RelativePath="..\src\sdl\timer.c"
+				>
+			</File>
+			<File
+				RelativePath="..\src\vid_vga.c"
+				>
+			</File>
+			<File
+				RelativePath="..\src\video.c"
+				>
+			</File>
+			<File
+				RelativePath="..\src\sdl\video.c"
+				>
 				<FileConfiguration
-					Name="Debug|Win32">
+					Name="Debug|Win32"
+					>
 					<Tool
 						Name="VCCLCompilerTool"
-						ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+						ObjectFile="$(IntDir)/$(InputName)1.obj"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32">
+					Name="Release|Win32"
+					>
 					<Tool
 						Name="VCCLCompilerTool"
-						ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+						ObjectFile="$(IntDir)/$(InputName)1.obj"
+					/>
 				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="src\video.c">
 			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
-			Filter="h;hpp;hxx;hm;inl;inc">
+			Filter="h;hpp;hxx;hm;inl;inc"
+			>
+			<File
+				RelativePath=".\config.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\font.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pcsound.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\std.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\sw.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swasynio.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swauto.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swcollsn.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swconf.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swdisp.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swend.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swgames.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swground.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swgrpha.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swinit.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swmain.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swmove.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swobject.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swsound.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swsplat.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swstbar.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swsymbol.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swtext.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swtitle.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\swutil.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\tcpcomm.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\timer.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\video.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"
-			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
+			>
 		</Filter>
 	</Files>
 	<Globals>
