@@ -7,6 +7,7 @@ config.log
 config.h
 config.status
 config.h.in
+config.h.in~
 configure
 
 depcomp

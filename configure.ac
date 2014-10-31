@@ -14,7 +14,7 @@ AC_PROG_CC
 AC_PROG_RANLIB
 
 # Checks for libraries.
-PKG_CHECK_MODULES([SDL], [sdl], [
+PKG_CHECK_MODULES([SDL2], [sdl2], [
 	echo "Building SDL version."
 	SOPWITH_BINS="$SOPWITH_BINS sopwith"
 	SOPWITH_SUBDIRS="$SOPWITH_SUBDIRS sdl"
