@@ -24,6 +24,7 @@ sopwith
 
 *.obj
 msvc/Debug
+msvc/x64
 *.ncb
 *.sln
 *.suo

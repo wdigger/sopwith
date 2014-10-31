@@ -53,44 +53,18 @@ extern unsigned int vid_pitch;
 
 static int ctrlbreak = 0;
 static BOOL initted = 0;
-static SDL_Surface *screen;
+static SDL_Window *window = NULL;
 static SDL_Surface *screenbuf = NULL;        // draw into buffer in 2x mode
+static SDL_Surface *tmpsutface = NULL;
 static int colors[16];
-
-static int getcolor(int r, int g, int b)
-{
-	SDL_Palette *pal = screen->format->palette;
-	int i;
-	int nearest = 0xffff, n = 0;
-
-	for (i = 0; i < pal->ncolors; ++i) {
-		int diff =
-		    (r - pal->colors[i].r) * (r - pal->colors[i].r) +
-		    (g - pal->colors[i].g) * (g - pal->colors[i].g) +
-		    (b - pal->colors[i].b) * (b - pal->colors[i].b);
-
-//              printf("%i, %i, %i\n",
-//                     pal->colors[i].r, pal->colors[i].g,
-//                     pal->colors[i].b);
-
-		if (!diff)
-			return i;
-
-		if (diff < nearest) {
-			nearest = diff;
-			n = i;
-		}
-	}
-
-	return n;
-}
+static SDL_Palette *palette;
 
 // convert a sopsym_t into a surface
 
 SDL_Surface *surface_from_sopsym(sopsym_t *sym)
 {
 	SDL_Surface *surface = SDL_CreateRGBSurface(0, sym->w, sym->h, 8,
-						    0, 0, 0, 0);
+	                                            0, 0, 0, 0);
 	unsigned char *p1, *p2;
 	int y;
 
@@ -98,8 +72,9 @@ SDL_Surface *surface_from_sopsym(sopsym_t *sym)
 		return NULL;
 
 	// set palette
-	
-	SDL_SetColors(surface, cga_pal, 0, sizeof(cga_pal)/sizeof(*cga_pal));	
+	if(0 != SDL_SetSurfacePalette(surface, palette)) {
+		printf("SDL_SetSurfacePalette failed: %s\n", SDL_GetError());
+	}
 
 	SDL_LockSurface(surface);
 
@@ -116,102 +91,37 @@ SDL_Surface *surface_from_sopsym(sopsym_t *sym)
 	return surface;
 }
 
-// 2x scale
-
-static void Vid_UpdateScaled()
-{
-	register char *pixels = (char *) screen->pixels;
-	register char *pixels2 = (char *) screenbuf->pixels;
-	register int pitch = screen->pitch;
-	register int pitch2 = screenbuf->pitch;
-	register int x, y;
-
-	SDL_LockSurface(screen);
-	SDL_LockSurface(screenbuf);
-
-	for (y = 0; y < SCR_HGHT; ++y) {
-		register char *p = pixels;
-		register char *p2 = pixels2;
-
-		for (x=0; x<SCR_WDTH; ++x) {
-			p[0] = p[1] =  p[pitch] = p[pitch + 1] = *p2++;
-			p += 2;
-		}
-
-		pixels += pitch * 2;
-		pixels2 += pitch2;
-	}
-
-	SDL_UnlockSurface(screenbuf);
-	SDL_UnlockSurface(screen);
-}
-
 void Vid_Update()
 {
+	SDL_Surface *screen = NULL;
+
 	if (!initted)
 		Vid_Init();
 
+	screen = SDL_GetWindowSurface(window);
 	SDL_UnlockSurface(screenbuf);
-
-	if (vid_double_size)
-		Vid_UpdateScaled();
-	else 
-		SDL_BlitSurface(screenbuf, NULL, screen, NULL);
-
-	SDL_UpdateRect(screen, 0, 0, screen->w, screen->h);
-
+	if(0 != SDL_BlitSurface(screenbuf, NULL, tmpsutface, NULL)) {
+		printf("SDL_SetSurfacePalette failed: %s\n", SDL_GetError());
+	}
+	if(0 != SDL_BlitScaled(tmpsutface, NULL, screen, NULL)) {
+		printf("SDL_SetSurfacePalette failed: %s\n", SDL_GetError());
+	}
 	SDL_LockSurface(screenbuf);
+	SDL_UpdateWindowSurface(window);
 }
 
 static void set_icon(sopsym_t *sym)
 {
-	unsigned char *pixels;
-	unsigned char *mask;
 	SDL_Surface *icon = surface_from_sopsym(sym);
-	int mask_size;
-	int i;
-	int x, y;
-
-	if (!icon)
-		return;
-
-	// generate mask from icon
-
-	mask_size = (icon->w * icon->h) / 8 + 1;
-
-	mask = (unsigned char *)malloc(mask_size);
-
-	SDL_LockSurface(icon);
-
-	pixels = (unsigned char *)icon->pixels;
-
-	i = 0;
-
-	for (y=0; y<icon->h; y++) {
-		for (x=0; x<icon->w; x++) {
-			if (i % 8) {
-				mask[i / 8] <<= 1;
-			} else {
-				mask[i / 8] = 0;
-			}
-
-			if (pixels[i]) 
-				mask[i / 8] |= 0x01;
-
-			++i;
-		}
+	if(0 != SDL_SetColorKey(icon, SDL_TRUE, 0)) {
+		printf("SDL_SetColorKey failed: %s\n", SDL_GetError());
 	}
 
-	SDL_UnlockSurface(icon);
-
 	// set icon
-
-	SDL_WM_SetIcon(icon, mask);
+	SDL_SetWindowIcon(window, icon);
 
 	SDL_FreeSurface(icon);
-	free(mask);
 }
-
 
 static void Vid_UnsetMode()
 {
@@ -234,9 +144,6 @@ static void Vid_SetMode()
 		exit(-1);
 	}
 
-	srand((int)time(NULL));
-	set_icon(symbol_plane[rand() % 2][rand() % 16]);
-
 	w = SCR_WDTH;
 	h = SCR_HGHT;
 
@@ -245,13 +152,13 @@ static void Vid_SetMode()
 		h *= 2;
 	}
 
-	flags = SDL_HWPALETTE;
 	if (vid_fullscreen)
-		flags |= SDL_FULLSCREEN;
+		flags |= SDL_WINDOW_FULLSCREEN;
 
-	screen = SDL_SetVideoMode(w, h, 8, flags);
+	window = SDL_CreateWindow("SDL Sopwith", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+	                          w, h, flags);
 
-	if (screen) {
+	if (window) {
 		printf("initialised\n");
 	} else {
 		printf("failed to set mode\n");
@@ -259,15 +166,12 @@ static void Vid_SetMode()
 		exit(-1);
 	}
 
-	SDL_EnableUNICODE(1);
+	srand((int)time(NULL));
+	set_icon(symbol_plane[rand() % 2][rand() % 16]);
 
 	for (n = 0; n < NUM_KEYS; ++n)
 		keysdown[n] = 0;
 
-	SDL_WM_SetCaption("SDL Sopwith", NULL);
-
-	SDL_SetColors(screen, cga_pal, 0, sizeof(cga_pal)/sizeof(*cga_pal));
-	SDL_SetColors(screenbuf, cga_pal, 0, sizeof(cga_pal)/sizeof(*cga_pal));
 	SDL_ShowCursor(0);
 }
 
@@ -291,7 +195,14 @@ void Vid_Init()
 	fflush(stdout);
 
 	screenbuf = SDL_CreateRGBSurface(0, SCR_WDTH, SCR_HGHT, 8,
-					 0, 0, 0, 0);	
+	                                 0, 0, 0, 0);
+	tmpsutface = SDL_CreateRGBSurface(0, SCR_WDTH, SCR_HGHT, 32,
+	                                  0, 0, 0, 0);
+	if (!palette) {
+		palette = SDL_AllocPalette(256);
+		SDL_SetPaletteColors(palette, cga_pal, 0, sizeof(cga_pal)/sizeof(*cga_pal));
+	}
+	SDL_SetSurfacePalette(screenbuf, palette);
 	vid_vram = screenbuf->pixels;
 	vid_pitch = screenbuf->pitch;
 
@@ -387,8 +298,7 @@ static void getevents()
 			else if (event.key.keysym.sym == SDLK_LCTRL || event.key.keysym.sym == SDLK_RCTRL)
 				ctrldown = 1;
 			else if (ctrldown &&
-				 (event.key.keysym.sym == SDLK_c ||
-				  event.key.keysym.sym == SDLK_BREAK)) {
+				 (event.key.keysym.sym == SDLK_c)) {
 				++ctrlbreak;
 				if (ctrlbreak >= 3) {
 					fprintf(stderr,
@@ -405,7 +315,7 @@ static void getevents()
 					input_buffer_push('\n');
 				}
  			} else {
-				input_buffer_push(event.key.keysym.unicode & 0x7f);
+				input_buffer_push(event.key.keysym.sym & 0x7f);
 			}
 			translated = translate_key(event.key.keysym.sym);
 			if (translated)
