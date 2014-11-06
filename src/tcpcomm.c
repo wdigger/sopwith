@@ -219,7 +219,7 @@ int commin()
 
 	// read
 
-	bytes = read(tcp_sock, &c, 1);
+	bytes = (int)read(tcp_sock, &c, 1);
 
 	if (bytes < 1) {
 		if (errno != EWOULDBLOCK) {

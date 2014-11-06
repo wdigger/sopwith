@@ -30,3 +30,9 @@ msvc/x64
 *.sln
 *.suo
 *.user
+
+*.xcworkspacedata
+*.xccheckout
+*.xcuserstate
+*.xcscheme
+*.plist

@@ -130,7 +130,7 @@ static void initgrnd()
 
 static void initseed()
 {
-	srand(clock());
+	srand((unsigned int)clock());
 	explseed = rand() % 65536;
 
 	// sdh 28/4/2002: removed atari and ibm code

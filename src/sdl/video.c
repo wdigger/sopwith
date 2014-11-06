@@ -56,7 +56,6 @@ static BOOL initted = 0;
 static SDL_Window *window = NULL;
 static SDL_Surface *screenbuf = NULL;        // draw into buffer in 2x mode
 static SDL_Surface *tmpsutface = NULL;
-static int colors[16];
 static SDL_Palette *palette;
 
 // convert a sopsym_t into a surface
