@@ -85,6 +85,8 @@ static inline int try_readshort()
 	return (t << 8) + s;
 }
 
+#ifdef TCPIP
+
 static int readshort()
 {
 	int i;
@@ -100,6 +102,8 @@ static int readshort()
 
 	return i;
 }
+
+#endif
 
 void asynput(int movekey)
 {
@@ -131,6 +135,8 @@ void asynupdate(void)
 		++latest_player_time[netplayer];
 	}
 }
+
+#ifdef TCPIP
 
 #define PROTOHEADER PACKAGE_STRING
 
@@ -305,6 +311,8 @@ static void asyninit()
 		exit(-1);
 	}
 }
+
+#endif
 
 void init1asy()
 {

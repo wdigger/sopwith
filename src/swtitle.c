@@ -174,6 +174,8 @@ void clrprmpt()
 	swposcur(0, 20);
 }
 
+#ifdef TCPIP
+
 static BOOL gethost()
 {
 	clrprmpt();
@@ -218,6 +220,8 @@ static BOOL getnet()
 		}
 	}
 }
+
+#endif
 
 // controller menu (unused)
 #if 0
