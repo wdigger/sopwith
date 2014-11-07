@@ -42,11 +42,11 @@
 #include "swtitle.h"
 #include "swutil.h"
 
-static BOOL quit;
+static bool quit;
 
 void swmove()
 {
-	register OBJECTS *ob, *obn;
+  OBJECTS *ob, *obn;
 
 	if (deltop) {
 		delbot->ob_next = objfree;
@@ -72,8 +72,8 @@ void swmove()
 
 static void nearpln(OBJECTS * obp)
 {
-	register OBJECTS *ob, *obt, *obc;
-	register int i, obx, obclr;
+  OBJECTS *ob, *obt, *obc;
+  int i, obx, obclr;
 
 	ob = obp;
 	obt = objtop + 1;
@@ -142,7 +142,7 @@ static void refuel(OBJECTS * obp)
 
 static int symangle(OBJECTS * ob)
 {
-	register int dx, dy;
+  int dx, dy;
 
 	dx = ob->ob_dx;
 	dy = ob->ob_dy;
@@ -168,12 +168,12 @@ static int symangle(OBJECTS * ob)
 		return 4;
 }
 
-BOOL moveplyr(OBJECTS * obp)
+bool moveplyr(OBJECTS * obp)
 {
-	register OBJECTS *ob;
+  OBJECTS *ob;
 	int multkey;
 
-	compplane = FALSE;
+	compplane = false;
 	plyrplane = player == obp->ob_plrnum;
 
 	ob = obp;
@@ -185,7 +185,7 @@ BOOL moveplyr(OBJECTS * obp)
 		if (endcount <= 0) {
 			if (playmode != PLAYMODE_ASYNCH && !quit)
 				swrestart();
-			swend(NULL, YES);
+			swend(NULL, true);
 		}
 	}
 	
@@ -223,10 +223,10 @@ BOOL moveplyr(OBJECTS * obp)
 				loser(ob);
 		} else {
 			initplyr(ob);
-			initdisp(YES);
+			initdisp(true);
 			if (endstat == WINNER) {
 				if (ctlbreak())
-					swend(NULL, YES);
+					swend(NULL, true);
 				winner(ob);
 			}
 		}
@@ -240,8 +240,8 @@ BOOL moveplyr(OBJECTS * obp)
 
 void interpret(OBJECTS * obp, int key)
 {
-	register OBJECTS *ob;
-	register obstate_t state;
+  OBJECTS *ob;
+  obstate_t state;
 
 	ob = obp;
 	ob->ob_flaps = 0;
@@ -266,47 +266,47 @@ void interpret(OBJECTS * obp, int key)
 
 		if (key & K_BREAK) {
 			ob->ob_life = QUIT;
-			ob->ob_home = FALSE;
+			ob->ob_home = true;
 			if (ob->ob_athome) {
 				ob->ob_state = state = CRASHED;
 				ob->ob_hitcount = 0;
 			}
 			if (plyrplane)
-				quit = TRUE;
+				quit = true;
 		}
 
 		if (key & K_HOME)
 			if (state == FLYING || state == WOUNDED)
-				ob->ob_home = TRUE;
+				ob->ob_home = true;
 	}
 
 	if ((countmove & 1)
 	    || (state != WOUNDED && state != WOUNDSTALL)) {
 		if (key & K_FLAPU) {
 			++ob->ob_flaps;
-			ob->ob_home = FALSE;
+			ob->ob_home = false;
 		}
 
 		if (key & K_FLAPD) {
 			--ob->ob_flaps;
-			ob->ob_home = FALSE;
+			ob->ob_home = false;
 		}
 
 		if (key & K_FLIP) {
 			ob->ob_orient = !ob->ob_orient;
-			ob->ob_home = FALSE;
+			ob->ob_home = false;
 		}
 
 		if (key & K_DEACC) {
 			if (ob->ob_accel)
 				--ob->ob_accel;
-			ob->ob_home = FALSE;
+			ob->ob_home = false;
 		}
 
 		if (key & K_ACCEL) {
 			if (ob->ob_accel < MAX_THROTTLE)
 				++ob->ob_accel;
-			ob->ob_home = FALSE;
+			ob->ob_home = false;
 		}
 	}
 
@@ -317,10 +317,10 @@ void interpret(OBJECTS * obp, int key)
 		ob->ob_mfiring = ob;
 
 	if ((key & K_BOMB) && state < FINISHED)
-		ob->ob_bombing = TRUE;
+		ob->ob_bombing = true;
 
 	if ((key & K_STARBURST) && state < FINISHED)
-		ob->ob_bfiring = TRUE;
+		ob->ob_bfiring = true;
 
 	if (key & K_SOUND)
 		if (plyrplane) {
@@ -335,17 +335,17 @@ void interpret(OBJECTS * obp, int key)
 		gohome(ob);
 }
 
-BOOL movecomp(OBJECTS * obp)
+bool movecomp(OBJECTS * obp)
 {
-	register OBJECTS *ob;
+  OBJECTS *ob;
 	int rc;
 
-	compplane = TRUE;
-	plyrplane = FALSE;
+	compplane = true;
+	plyrplane = false;
 
 	ob = obp;
 	ob->ob_flaps = 0;
-	ob->ob_bfiring = ob->ob_bombing = FALSE;
+	ob->ob_bfiring = ob->ob_bombing = false;
 	ob->ob_mfiring = NULL;
 
 	endstat = ob->ob_endsts;
@@ -387,9 +387,9 @@ BOOL movecomp(OBJECTS * obp)
 	return rc;
 }
 
-static BOOL stallpln(OBJECTS * obp)
+static bool stallpln(OBJECTS * obp)
 {
-	register OBJECTS *ob;
+  OBJECTS *ob;
 
 	ob = obp;
 	ob->ob_ldx = ob->ob_ldy = ob->ob_orient = ob->ob_dx = 0;
@@ -399,17 +399,17 @@ static BOOL stallpln(OBJECTS * obp)
 	ob->ob_hitcount = STALLCOUNT;
 	ob->ob_state = 
 		ob->ob_state == WOUNDED ? WOUNDSTALL : STALLED;
-	ob->ob_athome = FALSE;
+	ob->ob_athome = false;
 
-	return TRUE;
+	return true;
 }
 
 
 
-BOOL movepln(OBJECTS * obp)
+bool movepln(OBJECTS * obp)
 {
-	register OBJECTS *ob = obp;
-	register int nangle, nspeed, limit, update;
+  OBJECTS *ob = obp;
+  int nangle, nspeed, limit, update;
 	obstate_t state, newstate;
 	int x, y, stalled;
 	// int grv;
@@ -427,7 +427,7 @@ BOOL movepln(OBJECTS * obp)
 	switch (state) {
 	case FINISHED:
 	case WAITING:
-		return FALSE;
+		return false;
 
 	case CRASHED:
 		--ob->ob_hitcount;
@@ -481,7 +481,7 @@ BOOL movepln(OBJECTS * obp)
 		if (stalled) {
 			if (playmode == PLAYMODE_NOVICE) {
 				ob->ob_angle = (3 * ANGLES / 4);
-				stalled = FALSE;
+				stalled = false;
 			} else {
 				stallpln(ob);
 				state = ob->ob_state;
@@ -529,16 +529,16 @@ BOOL movepln(OBJECTS * obp)
 			if (!stalled && nspeed < gminspeed
 			    && playmode != PLAYMODE_NOVICE) {
 				--nspeed;
-				update = TRUE;
+				update = true;
 			} else {
 				limit = gminspeed
 				    + ob->ob_accel + gravity[nangle];
 				if (nspeed < limit) {
 					++nspeed;
-					update = TRUE;
+					update = true;
 				} else if (nspeed > limit) {
 					--nspeed;
-					update = TRUE;
+					update = true;
 				}
 			}
 		}
@@ -589,7 +589,7 @@ BOOL movepln(OBJECTS * obp)
 		}
 
 		if (ob->ob_speed)
-			ob->ob_athome = FALSE;
+			ob->ob_athome = false;
 		break;
 	default:
 		break;
@@ -647,14 +647,14 @@ BOOL movepln(OBJECTS * obp)
 		return plyrplane || ob->ob_state < FINISHED;
 	}
 
-	return FALSE;
+	return false;
 }
 
 
 
 static void adjustfall(OBJECTS * obp)
 {
-	register OBJECTS *ob;
+  OBJECTS *ob;
 
 	ob = obp;
 	
@@ -673,9 +673,9 @@ static void adjustfall(OBJECTS * obp)
 }
 
 
-BOOL moveshot(OBJECTS * obp)
+bool moveshot(OBJECTS * obp)
 {
-	register OBJECTS *ob;
+  OBJECTS *ob;
 	int x, y;
 
 	ob = obp;
@@ -685,7 +685,7 @@ BOOL moveshot(OBJECTS * obp)
 
 	if (ob->ob_life <= 0) {
 		deallobj(ob);
-		return FALSE;
+		return false;
 	}
 
 	movexy(ob, &x, &y);
@@ -693,19 +693,19 @@ BOOL moveshot(OBJECTS * obp)
 	if (y >= MAX_Y || y <= (int) ground[x]
 	    || x < 0 || x >= MAX_X) {
 		deallobj(ob);
-		return FALSE;
+		return false;
 	}
 
 	insertx(ob, ob->ob_xnext);
 	ob->ob_newsym = &symbol_pixel;
-	return TRUE;
+	return true;
 }
 
 
 
-BOOL movebomb(OBJECTS * obp)
+bool movebomb(OBJECTS * obp)
 {
-	register OBJECTS *ob;
+  OBJECTS *ob;
 	int x, y;
 
 	ob = obp;
@@ -715,7 +715,7 @@ BOOL movebomb(OBJECTS * obp)
 	if (ob->ob_life < 0) {
 		deallobj(ob);
 		ob->ob_state = FINISHED;
-		return FALSE;
+		return false;
 	}
 
 	adjustfall(ob);
@@ -729,23 +729,23 @@ BOOL movebomb(OBJECTS * obp)
 		deallobj(ob);
 		stopsound(ob);
 		ob->ob_state = FINISHED;
-		return FALSE;
+		return false;
 	}
 
 	ob->ob_newsym = symbol_bomb[symangle(ob)]; 
 	insertx(ob, ob->ob_xnext);
 
 	if (y >= MAX_Y)
-		return FALSE;
+		return false;
 
-	return TRUE;
+	return true;
 }
 
 
 
-BOOL movemiss(OBJECTS * obp)
+bool movemiss(OBJECTS * obp)
 {
-	register OBJECTS *ob;
+  OBJECTS *ob;
 	int x, y, angle;
 	OBJECTS *obt;
 
@@ -756,7 +756,7 @@ BOOL movemiss(OBJECTS * obp)
 	if (ob->ob_life < 0) {
 		deallobj(ob);
 		ob->ob_state = FINISHED;
-		return FALSE;
+		return false;
 	}
 
 	if (ob->ob_state == FLYING) {
@@ -765,7 +765,7 @@ BOOL movemiss(OBJECTS * obp)
 		if (obt != ob->ob_owner && (ob->ob_life & 1)) {
 			if (obt->ob_target)
 				obt = obt->ob_target;
-			aim(ob, obt->ob_x, obt->ob_y, NULL, NO);
+			aim(ob, obt->ob_x, obt->ob_y, NULL, false);
 			angle = ob->ob_angle
 			    =
 			    (ob->ob_angle + ob->ob_flaps +
@@ -791,23 +791,23 @@ BOOL movemiss(OBJECTS * obp)
 	if (y < 0 || x < 0 || x >= MAX_X) {
 		deallobj(ob);
 		ob->ob_state = FINISHED;
-		return FALSE;
+		return false;
 	}
 
 	ob->ob_newsym = symbol_missile[ob->ob_angle];
 	insertx(ob, ob->ob_xnext);
 
 	if (y >= MAX_Y)
-		return FALSE;
+		return false;
 
-	return TRUE;
+	return true;
 }
 
 
 
-BOOL moveburst(OBJECTS * obp)
+bool moveburst(OBJECTS * obp)
 {
-	register OBJECTS *ob;
+  OBJECTS *ob;
 	int x, y;
 
 	ob = obp;
@@ -815,7 +815,7 @@ BOOL moveburst(OBJECTS * obp)
 	if (ob->ob_life < 0) {
 		ob->ob_owner->ob_target = NULL;
 		deallobj(ob);
-		return FALSE;
+		return false;
 	}
 
 	adjustfall(ob);
@@ -824,7 +824,7 @@ BOOL moveburst(OBJECTS * obp)
 	if (y <= (int) ground[x] || x < 0 || x >= MAX_X) {
 		ob->ob_owner->ob_target = NULL;
 		deallobj(ob);
-		return FALSE;
+		return false;
 	}
 
 	ob->ob_owner->ob_target = ob;
@@ -837,10 +837,10 @@ BOOL moveburst(OBJECTS * obp)
 
 
 
-BOOL movetarg(OBJECTS * obt)
+bool movetarg(OBJECTS * obt)
 {
 	int r;
-	register OBJECTS *obp, *ob;
+	OBJECTS *obp, *ob;
 
 	ob = obt;
 	obp = objtop;
@@ -867,16 +867,16 @@ BOOL movetarg(OBJECTS * obt)
 	else
 		ob->ob_newsym = symbol_target_hit;
 
-	return TRUE;
+	return true;
 }
 
 
 
-BOOL moveexpl(OBJECTS * obp)
+bool moveexpl(OBJECTS * obp)
 {
-	register OBJECTS *ob;
+  OBJECTS *ob;
 	int x, y;
-	register int orient;
+  int orient;
 
 	ob = obp;
 	orient = ob->ob_orient;
@@ -885,7 +885,7 @@ BOOL moveexpl(OBJECTS * obp)
 		if (orient)
 			stopsound(ob);
 		deallobj(ob);
-		return FALSE;
+		return false;
 	}
 
 	--ob->ob_life;
@@ -910,7 +910,7 @@ BOOL moveexpl(OBJECTS * obp)
 		if (orient)
 			stopsound(ob);
 		deallobj(ob);
-		return (FALSE);
+		return (false);
 	}
 	++ob->ob_hitcount;
 
@@ -922,10 +922,10 @@ BOOL moveexpl(OBJECTS * obp)
 
 
 
-BOOL movesmok(OBJECTS * obp)
+bool movesmok(OBJECTS * obp)
 {
-	register OBJECTS *ob;
-	register obstate_t state;
+  OBJECTS *ob;
+  obstate_t state;
 
 	ob = obp;
 
@@ -939,18 +939,18 @@ BOOL movesmok(OBJECTS * obp)
 		&& state != WOUNDSTALL
 		&& state != CRASHED)) {
 		deallobj(ob);
-		return FALSE;
+		return false;
 	}
 	ob->ob_newsym = &symbol_pixel;
 
-	return TRUE;
+	return true;
 }
 
 
 
-BOOL moveflck(OBJECTS * obp)
+bool moveflck(OBJECTS * obp)
 {
-	register OBJECTS *ob;
+  OBJECTS *ob;
 	int x, y;
 
 	ob = obp;
@@ -958,7 +958,7 @@ BOOL moveflck(OBJECTS * obp)
 
 	if (ob->ob_life == -1) {
 		deallobj(ob);
-		return FALSE;
+		return false;
 	}
 
 	--ob->ob_life;
@@ -974,14 +974,14 @@ BOOL moveflck(OBJECTS * obp)
 	movexy(ob, &x, &y);
 	insertx(ob, ob->ob_xnext);
 	ob->ob_newsym = symbol_flock[ob->ob_orient]; 
-	return TRUE;
+	return true;
 }
 
 
 
-BOOL movebird(OBJECTS * obp)
+bool movebird(OBJECTS * obp)
 {
-	register OBJECTS *ob;
+  OBJECTS *ob;
 	int x, y;
 
 	ob = obp;
@@ -990,7 +990,7 @@ BOOL movebird(OBJECTS * obp)
 
 	if (ob->ob_life == -1) {
 		deallobj(ob);
-		return FALSE;
+		return false;
 	} else if (ob->ob_life == -2) {
 		ob->ob_dy = -ob->ob_dy;
 		ob->ob_dx = (countmove & 7) - 4;
@@ -1012,26 +1012,26 @@ BOOL movebird(OBJECTS * obp)
 	    || x < 0 || x >= MAX_X) {
 		ob->ob_y -= ob->ob_dy;
 		ob->ob_life = -2;
-		return FALSE;
+		return false;
 	}
-	return TRUE;
+	return true;
 }
 
 
 
 
-BOOL moveox(OBJECTS * ob)
+bool moveox(OBJECTS * ob)
 {
 	ob->ob_newsym = symbol_ox[ob->ob_state != STANDING];
-	return TRUE;
+	return true;
 }
 
 
 
 
-BOOL crashpln(OBJECTS * obp)
+bool crashpln(OBJECTS * obp)
 {
-	register OBJECTS *ob, *obo;
+  OBJECTS *ob, *obo;
 
 	ob = obp;
 
@@ -1041,7 +1041,7 @@ BOOL crashpln(OBJECTS * obp)
 		ob->ob_angle = (ob->ob_angle + ANGLES - 2) % ANGLES;
 
 	ob->ob_state = CRASHED;
-	ob->ob_athome = FALSE;
+	ob->ob_athome = false;
 	ob->ob_dx = ob->ob_dy = ob->ob_ldx = ob->ob_ldy = ob->ob_speed = 0;
 
 	obo = &oobjects[ob->ob_index];
@@ -1049,31 +1049,31 @@ BOOL crashpln(OBJECTS * obp)
 			   && (abs(obo->ob_y - ob->ob_y) < SAFERESET))
 	    ? (MAXCRCOUNT << 1) : MAXCRCOUNT;
 
-	return TRUE;
+	return true;
 }
 
 
 
-BOOL hitpln(OBJECTS * obp)
+bool hitpln(OBJECTS * obp)
 {
-	register OBJECTS *ob;
+  OBJECTS *ob;
 
 	ob = obp;
 	ob->ob_ldx = ob->ob_ldy = 0;
 	ob->ob_hitcount = FALLCOUNT;
 	ob->ob_state = FALLING;
-	ob->ob_athome = FALSE;
+	ob->ob_athome = false;
 
-	return TRUE;
+	return true;
 }
 
 
 
 
-BOOL insertx(OBJECTS * ob, OBJECTS * obp)
+bool insertx(OBJECTS * ob, OBJECTS * obp)
 {
-	register OBJECTS *obs;
-	register int obx;
+  OBJECTS *obs;
+  int obx;
 
 	obs = obp;
 	obx = ob->ob_x;
@@ -1091,14 +1091,14 @@ BOOL insertx(OBJECTS * ob, OBJECTS * obp)
 	obs->ob_xnext->ob_xprev = ob;
 	obs->ob_xnext = ob;
 
-	return TRUE;
+	return true;
 }
 
 
 
 void deletex(OBJECTS * obp)
 {
-	register OBJECTS *ob;
+  OBJECTS *ob;
 
 	ob = obp;
 	ob->ob_xnext->ob_xprev = ob->ob_xprev;

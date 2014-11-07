@@ -45,14 +45,14 @@ static SDL_Color cga_pal[] = {
 #endif
 };
 
-BOOL vid_fullscreen = FALSE;
-BOOL vid_double_size = TRUE;
+bool vid_fullscreen = false;
+bool vid_double_size = true;
 
 extern unsigned char *vid_vram;
 extern unsigned int vid_pitch;
 
 static int ctrlbreak = 0;
-static BOOL initted = 0;
+static bool initted = 0;
 static SDL_Window *window = NULL;
 static SDL_Surface *screenbuf = NULL;        // draw into buffer in 2x mode
 static SDL_Surface *tmpsutface = NULL;
@@ -202,7 +202,7 @@ void Vid_Init()
 		SDL_SetPaletteColors(palette, cga_pal, 0, sizeof(cga_pal)/sizeof(*cga_pal));
 	}
 	SDL_SetSurfacePalette(screenbuf, palette);
-	vid_vram = screenbuf->pixels;
+	vid_vram = (unsigned char*)screenbuf->pixels;
 	vid_pitch = screenbuf->pitch;
 
 	Vid_SetMode();
@@ -286,7 +286,7 @@ static sopkey_t translate_key(int sdl_key)
 static void getevents()
 {
 	SDL_Event event;
-	static BOOL ctrldown = 0, altdown = 0;
+	static bool ctrldown = 0, altdown = 0;
 	sopkey_t translated;
 
 	while (SDL_PollEvent(&event)) {
@@ -342,7 +342,7 @@ int Vid_GetKey()
 	return input_buffer_pop();
 }
 
-BOOL Vid_GetCtrlBreak()
+bool Vid_GetCtrlBreak()
 {
 	getevents();
 	return ctrlbreak;

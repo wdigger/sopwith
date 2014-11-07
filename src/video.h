@@ -56,8 +56,8 @@ typedef enum {
 
 extern int keysdown[NUM_KEYS];
 
-extern BOOL vid_fullscreen;         // fullscreen
-extern BOOL vid_double_size;        // x2 scale
+extern bool vid_fullscreen;         // fullscreen
+extern bool vid_double_size;        // x2 scale
 
 // init/shutdown
 
@@ -69,7 +69,7 @@ extern void Vid_Reset();
 
 extern void Vid_Update();
 
-extern BOOL Vid_GetCtrlBreak();
+extern bool Vid_GetCtrlBreak();
 
 // keyboard functions
 

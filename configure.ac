@@ -3,14 +3,14 @@
 
 AC_PREREQ([2.69])
 AC_INIT([SDL Sopwith], [1.8.x], [fraggle@gmail.com])
-AC_CONFIG_SRCDIR([src/swmain.c])
+AC_CONFIG_SRCDIR([src/swmain.cpp])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([foreign subdir-objects dist-xz])
 
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
 # Checks for programs.
-AC_PROG_CC
+AC_PROG_CXX
 AC_PROG_RANLIB
 
 # Checks for libraries.

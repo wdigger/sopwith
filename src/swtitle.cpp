@@ -153,7 +153,7 @@ void swtitlf()
 // rename to swmenus.c?
 //
 
-BOOL ctlbreak()
+bool ctlbreak()
 {
 	return Vid_GetCtrlBreak();
 }
@@ -176,7 +176,7 @@ void clrprmpt()
 
 #ifdef TCPIP
 
-static BOOL gethost()
+static bool gethost()
 {
 	clrprmpt();
 
@@ -188,7 +188,7 @@ static BOOL gethost()
 
 // network menu
 
-static BOOL getnet()
+static bool getnet()
 {
 	for (;;) {
 		clrprmpt();
@@ -201,7 +201,7 @@ static BOOL getnet()
 		swsndupdate();
 
 		if (ctlbreak())
-			swend(NULL, NO);
+			swend(NULL, false);
 
 		switch (toupper(swgetc() & 0xff)) {
 		case 'L':
@@ -270,14 +270,14 @@ static void getkey()
 
 int getgame()
 {
-	register int game;
+	int game;
 
 	clrprmpt();
 	swputs("         Key a game number");
 
 	for (;;) {
 		if (ctlbreak())
-			swend(NULL, NO);
+			swend(NULL, false);
 		if (((game = (swgetc() & 0x00FF) - '0') >= 0)
 		    && (game <= MAX_GAME))
 			return (game);
@@ -286,7 +286,7 @@ int getgame()
 
 // sdh: get single player skill level
 
-static BOOL getskill()
+static bool getskill()
 {
 	for (;;) {
 		clrprmpt();
@@ -297,7 +297,7 @@ static BOOL getskill()
 
 		swsndupdate();
 		if (ctlbreak())
-			swend(NULL, NO);
+			swend(NULL, false);
 		switch (toupper(swgetc() & 0xff)) {
 		case 'N':
 			playmode = PLAYMODE_NOVICE;
@@ -330,7 +330,7 @@ void getgamemode()
 		Vid_Update();
 
 		if (ctlbreak())
-			swend(NULL, NO);
+			swend(NULL, false);
 
 		c = toupper(swgetc() & 0xff);
 

@@ -7,33 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B4EB60A1A03921900DF969E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B4EB6051A03921900DF969E /* main.c */; };
-		7B4EB60B1A03921900DF969E /* pcsound.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B4EB6061A03921900DF969E /* pcsound.c */; };
-		7B4EB60D1A03921900DF969E /* timer.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B4EB6081A03921900DF969E /* timer.c */; };
-		7B4EB60E1A03921900DF969E /* video.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B4EB6091A03921900DF969E /* video.c */; };
-		7BCD4B4C1A0BA15900A60714 /* swasynio.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B1E1A0BA15900A60714 /* swasynio.c */; };
-		7BCD4B4D1A0BA15900A60714 /* swauto.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B201A0BA15900A60714 /* swauto.c */; };
-		7BCD4B4E1A0BA15900A60714 /* swcollsn.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B221A0BA15900A60714 /* swcollsn.c */; };
-		7BCD4B4F1A0BA15900A60714 /* swconf.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B241A0BA15900A60714 /* swconf.c */; };
-		7BCD4B501A0BA15900A60714 /* swdisp.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B261A0BA15900A60714 /* swdisp.c */; };
-		7BCD4B511A0BA15900A60714 /* swend.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B281A0BA15900A60714 /* swend.c */; };
-		7BCD4B521A0BA15900A60714 /* swgames.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B2A1A0BA15900A60714 /* swgames.c */; };
-		7BCD4B531A0BA15900A60714 /* swground.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B2C1A0BA15900A60714 /* swground.c */; };
-		7BCD4B541A0BA15900A60714 /* swgrpha.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B2E1A0BA15900A60714 /* swgrpha.c */; };
-		7BCD4B551A0BA15900A60714 /* swinit.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B301A0BA15900A60714 /* swinit.c */; };
-		7BCD4B561A0BA15900A60714 /* swmain.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B321A0BA15900A60714 /* swmain.c */; };
-		7BCD4B571A0BA15900A60714 /* swmove.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B341A0BA15900A60714 /* swmove.c */; };
-		7BCD4B581A0BA15900A60714 /* swobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B361A0BA15900A60714 /* swobject.c */; };
-		7BCD4B591A0BA15900A60714 /* swsound.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B381A0BA15900A60714 /* swsound.c */; };
-		7BCD4B5A1A0BA15900A60714 /* swsplat.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B3A1A0BA15900A60714 /* swsplat.c */; };
-		7BCD4B5B1A0BA15900A60714 /* swstbar.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B3C1A0BA15900A60714 /* swstbar.c */; };
-		7BCD4B5C1A0BA15900A60714 /* swsymbol.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B3E1A0BA15900A60714 /* swsymbol.c */; };
-		7BCD4B5D1A0BA15900A60714 /* swtext.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B401A0BA15900A60714 /* swtext.c */; };
-		7BCD4B5E1A0BA15900A60714 /* swtitle.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B421A0BA15900A60714 /* swtitle.c */; };
-		7BCD4B5F1A0BA15900A60714 /* swutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B441A0BA15900A60714 /* swutil.c */; };
-		7BCD4B601A0BA15900A60714 /* tcpcomm.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B461A0BA15900A60714 /* tcpcomm.c */; };
-		7BCD4B611A0BA15900A60714 /* vid_vga.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B491A0BA15900A60714 /* vid_vga.c */; };
-		7BCD4B621A0BA15900A60714 /* video.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B4A1A0BA15900A60714 /* video.c */; };
+		7B4EB60A1A03921900DF969E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B4EB6051A03921900DF969E /* main.cpp */; };
+		7B4EB60B1A03921900DF969E /* pcsound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B4EB6061A03921900DF969E /* pcsound.cpp */; };
+		7B4EB60D1A03921900DF969E /* timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B4EB6081A03921900DF969E /* timer.cpp */; };
+		7B4EB60E1A03921900DF969E /* video.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B4EB6091A03921900DF969E /* video.cpp */; };
+		7BCD4B4C1A0BA15900A60714 /* swasynio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B1E1A0BA15900A60714 /* swasynio.cpp */; };
+		7BCD4B4D1A0BA15900A60714 /* swauto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B201A0BA15900A60714 /* swauto.cpp */; };
+		7BCD4B4E1A0BA15900A60714 /* swcollsn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B221A0BA15900A60714 /* swcollsn.cpp */; };
+		7BCD4B4F1A0BA15900A60714 /* swconf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B241A0BA15900A60714 /* swconf.cpp */; };
+		7BCD4B501A0BA15900A60714 /* swdisp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B261A0BA15900A60714 /* swdisp.cpp */; };
+		7BCD4B511A0BA15900A60714 /* swend.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B281A0BA15900A60714 /* swend.cpp */; };
+		7BCD4B521A0BA15900A60714 /* swgames.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B2A1A0BA15900A60714 /* swgames.cpp */; };
+		7BCD4B531A0BA15900A60714 /* swground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B2C1A0BA15900A60714 /* swground.cpp */; };
+		7BCD4B541A0BA15900A60714 /* swgrpha.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B2E1A0BA15900A60714 /* swgrpha.cpp */; };
+		7BCD4B551A0BA15900A60714 /* swinit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B301A0BA15900A60714 /* swinit.cpp */; };
+		7BCD4B561A0BA15900A60714 /* swmain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B321A0BA15900A60714 /* swmain.cpp */; };
+		7BCD4B571A0BA15900A60714 /* swmove.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B341A0BA15900A60714 /* swmove.cpp */; };
+		7BCD4B581A0BA15900A60714 /* swobject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B361A0BA15900A60714 /* swobject.cpp */; };
+		7BCD4B591A0BA15900A60714 /* swsound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B381A0BA15900A60714 /* swsound.cpp */; };
+		7BCD4B5A1A0BA15900A60714 /* swsplat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B3A1A0BA15900A60714 /* swsplat.cpp */; };
+		7BCD4B5B1A0BA15900A60714 /* swstbar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B3C1A0BA15900A60714 /* swstbar.cpp */; };
+		7BCD4B5C1A0BA15900A60714 /* swsymbol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B3E1A0BA15900A60714 /* swsymbol.cpp */; };
+		7BCD4B5D1A0BA15900A60714 /* swtext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B401A0BA15900A60714 /* swtext.cpp */; };
+		7BCD4B5E1A0BA15900A60714 /* swtitle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B421A0BA15900A60714 /* swtitle.cpp */; };
+		7BCD4B5F1A0BA15900A60714 /* swutil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B441A0BA15900A60714 /* swutil.cpp */; };
+		7BCD4B601A0BA15900A60714 /* tcpcomm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B461A0BA15900A60714 /* tcpcomm.cpp */; };
+		7BCD4B611A0BA15900A60714 /* vid_vga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B491A0BA15900A60714 /* vid_vga.cpp */; };
+		7BCD4B621A0BA15900A60714 /* video.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD4B4A1A0BA15900A60714 /* video.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,60 +50,60 @@
 
 /* Begin PBXFileReference section */
 		7B4EB5B21A0390D500DF969E /* sopwith */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sopwith; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B4EB6051A03921900DF969E /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = ./src/sdl/main.c; sourceTree = "<group>"; };
-		7B4EB6061A03921900DF969E /* pcsound.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pcsound.c; path = ./src/sdl/pcsound.c; sourceTree = "<group>"; };
-		7B4EB6081A03921900DF969E /* timer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = timer.c; path = ./src/sdl/timer.c; sourceTree = "<group>"; };
-		7B4EB6091A03921900DF969E /* video.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = video.c; path = ./src/sdl/video.c; sourceTree = "<group>"; };
+		7B4EB6051A03921900DF969E /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ./src/sdl/main.cpp; sourceTree = "<group>"; };
+		7B4EB6061A03921900DF969E /* pcsound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pcsound.cpp; path = ./src/sdl/pcsound.cpp; sourceTree = "<group>"; };
+		7B4EB6081A03921900DF969E /* timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = timer.cpp; path = ./src/sdl/timer.cpp; sourceTree = "<group>"; };
+		7B4EB6091A03921900DF969E /* video.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = video.cpp; path = ./src/sdl/video.cpp; sourceTree = "<group>"; };
 		7B4EB6101A03923700DF969E /* ./mac/config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ./mac/config.h; sourceTree = SOURCE_ROOT; };
 		7BCD4B1A1A0BA15900A60714 /* font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = font.h; path = ./src/font.h; sourceTree = "<group>"; };
 		7BCD4B1B1A0BA15900A60714 /* pcsound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pcsound.h; path = ./src/pcsound.h; sourceTree = "<group>"; };
 		7BCD4B1C1A0BA15900A60714 /* std.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = std.h; path = ./src/std.h; sourceTree = "<group>"; };
 		7BCD4B1D1A0BA15900A60714 /* sw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sw.h; path = ./src/sw.h; sourceTree = "<group>"; };
-		7BCD4B1E1A0BA15900A60714 /* swasynio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swasynio.c; path = ./src/swasynio.c; sourceTree = "<group>"; };
+		7BCD4B1E1A0BA15900A60714 /* swasynio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swasynio.cpp; path = ./src/swasynio.cpp; sourceTree = "<group>"; };
 		7BCD4B1F1A0BA15900A60714 /* swasynio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swasynio.h; path = ./src/swasynio.h; sourceTree = "<group>"; };
-		7BCD4B201A0BA15900A60714 /* swauto.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swauto.c; path = ./src/swauto.c; sourceTree = "<group>"; };
+		7BCD4B201A0BA15900A60714 /* swauto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swauto.cpp; path = ./src/swauto.cpp; sourceTree = "<group>"; };
 		7BCD4B211A0BA15900A60714 /* swauto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swauto.h; path = ./src/swauto.h; sourceTree = "<group>"; };
-		7BCD4B221A0BA15900A60714 /* swcollsn.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swcollsn.c; path = ./src/swcollsn.c; sourceTree = "<group>"; };
+		7BCD4B221A0BA15900A60714 /* swcollsn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swcollsn.cpp; path = ./src/swcollsn.cpp; sourceTree = "<group>"; };
 		7BCD4B231A0BA15900A60714 /* swcollsn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swcollsn.h; path = ./src/swcollsn.h; sourceTree = "<group>"; };
-		7BCD4B241A0BA15900A60714 /* swconf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swconf.c; path = ./src/swconf.c; sourceTree = "<group>"; };
+		7BCD4B241A0BA15900A60714 /* swconf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swconf.cpp; path = ./src/swconf.cpp; sourceTree = "<group>"; };
 		7BCD4B251A0BA15900A60714 /* swconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swconf.h; path = ./src/swconf.h; sourceTree = "<group>"; };
-		7BCD4B261A0BA15900A60714 /* swdisp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swdisp.c; path = ./src/swdisp.c; sourceTree = "<group>"; };
+		7BCD4B261A0BA15900A60714 /* swdisp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swdisp.cpp; path = ./src/swdisp.cpp; sourceTree = "<group>"; };
 		7BCD4B271A0BA15900A60714 /* swdisp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swdisp.h; path = ./src/swdisp.h; sourceTree = "<group>"; };
-		7BCD4B281A0BA15900A60714 /* swend.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swend.c; path = ./src/swend.c; sourceTree = "<group>"; };
+		7BCD4B281A0BA15900A60714 /* swend.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swend.cpp; path = ./src/swend.cpp; sourceTree = "<group>"; };
 		7BCD4B291A0BA15900A60714 /* swend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swend.h; path = ./src/swend.h; sourceTree = "<group>"; };
-		7BCD4B2A1A0BA15900A60714 /* swgames.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swgames.c; path = ./src/swgames.c; sourceTree = "<group>"; };
+		7BCD4B2A1A0BA15900A60714 /* swgames.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swgames.cpp; path = ./src/swgames.cpp; sourceTree = "<group>"; };
 		7BCD4B2B1A0BA15900A60714 /* swgames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swgames.h; path = ./src/swgames.h; sourceTree = "<group>"; };
-		7BCD4B2C1A0BA15900A60714 /* swground.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swground.c; path = ./src/swground.c; sourceTree = "<group>"; };
+		7BCD4B2C1A0BA15900A60714 /* swground.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swground.cpp; path = ./src/swground.cpp; sourceTree = "<group>"; };
 		7BCD4B2D1A0BA15900A60714 /* swground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swground.h; path = ./src/swground.h; sourceTree = "<group>"; };
-		7BCD4B2E1A0BA15900A60714 /* swgrpha.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swgrpha.c; path = ./src/swgrpha.c; sourceTree = "<group>"; };
+		7BCD4B2E1A0BA15900A60714 /* swgrpha.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swgrpha.cpp; path = ./src/swgrpha.cpp; sourceTree = "<group>"; };
 		7BCD4B2F1A0BA15900A60714 /* swgrpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swgrpha.h; path = ./src/swgrpha.h; sourceTree = "<group>"; };
-		7BCD4B301A0BA15900A60714 /* swinit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swinit.c; path = ./src/swinit.c; sourceTree = "<group>"; };
+		7BCD4B301A0BA15900A60714 /* swinit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swinit.cpp; path = ./src/swinit.cpp; sourceTree = "<group>"; };
 		7BCD4B311A0BA15900A60714 /* swinit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swinit.h; path = ./src/swinit.h; sourceTree = "<group>"; };
-		7BCD4B321A0BA15900A60714 /* swmain.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swmain.c; path = ./src/swmain.c; sourceTree = "<group>"; };
+		7BCD4B321A0BA15900A60714 /* swmain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swmain.cpp; path = ./src/swmain.cpp; sourceTree = "<group>"; };
 		7BCD4B331A0BA15900A60714 /* swmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swmain.h; path = ./src/swmain.h; sourceTree = "<group>"; };
-		7BCD4B341A0BA15900A60714 /* swmove.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swmove.c; path = ./src/swmove.c; sourceTree = "<group>"; };
+		7BCD4B341A0BA15900A60714 /* swmove.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swmove.cpp; path = ./src/swmove.cpp; sourceTree = "<group>"; };
 		7BCD4B351A0BA15900A60714 /* swmove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swmove.h; path = ./src/swmove.h; sourceTree = "<group>"; };
-		7BCD4B361A0BA15900A60714 /* swobject.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swobject.c; path = ./src/swobject.c; sourceTree = "<group>"; };
+		7BCD4B361A0BA15900A60714 /* swobject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swobject.cpp; path = ./src/swobject.cpp; sourceTree = "<group>"; };
 		7BCD4B371A0BA15900A60714 /* swobject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swobject.h; path = ./src/swobject.h; sourceTree = "<group>"; };
-		7BCD4B381A0BA15900A60714 /* swsound.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swsound.c; path = ./src/swsound.c; sourceTree = "<group>"; };
+		7BCD4B381A0BA15900A60714 /* swsound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swsound.cpp; path = ./src/swsound.cpp; sourceTree = "<group>"; };
 		7BCD4B391A0BA15900A60714 /* swsound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swsound.h; path = ./src/swsound.h; sourceTree = "<group>"; };
-		7BCD4B3A1A0BA15900A60714 /* swsplat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swsplat.c; path = ./src/swsplat.c; sourceTree = "<group>"; };
+		7BCD4B3A1A0BA15900A60714 /* swsplat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swsplat.cpp; path = ./src/swsplat.cpp; sourceTree = "<group>"; };
 		7BCD4B3B1A0BA15900A60714 /* swsplat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swsplat.h; path = ./src/swsplat.h; sourceTree = "<group>"; };
-		7BCD4B3C1A0BA15900A60714 /* swstbar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swstbar.c; path = ./src/swstbar.c; sourceTree = "<group>"; };
+		7BCD4B3C1A0BA15900A60714 /* swstbar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swstbar.cpp; path = ./src/swstbar.cpp; sourceTree = "<group>"; };
 		7BCD4B3D1A0BA15900A60714 /* swstbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swstbar.h; path = ./src/swstbar.h; sourceTree = "<group>"; };
-		7BCD4B3E1A0BA15900A60714 /* swsymbol.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swsymbol.c; path = ./src/swsymbol.c; sourceTree = "<group>"; };
+		7BCD4B3E1A0BA15900A60714 /* swsymbol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swsymbol.cpp; path = ./src/swsymbol.cpp; sourceTree = "<group>"; };
 		7BCD4B3F1A0BA15900A60714 /* swsymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swsymbol.h; path = ./src/swsymbol.h; sourceTree = "<group>"; };
-		7BCD4B401A0BA15900A60714 /* swtext.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swtext.c; path = ./src/swtext.c; sourceTree = "<group>"; };
+		7BCD4B401A0BA15900A60714 /* swtext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swtext.cpp; path = ./src/swtext.cpp; sourceTree = "<group>"; };
 		7BCD4B411A0BA15900A60714 /* swtext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swtext.h; path = ./src/swtext.h; sourceTree = "<group>"; };
-		7BCD4B421A0BA15900A60714 /* swtitle.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swtitle.c; path = ./src/swtitle.c; sourceTree = "<group>"; };
+		7BCD4B421A0BA15900A60714 /* swtitle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swtitle.cpp; path = ./src/swtitle.cpp; sourceTree = "<group>"; };
 		7BCD4B431A0BA15900A60714 /* swtitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swtitle.h; path = ./src/swtitle.h; sourceTree = "<group>"; };
-		7BCD4B441A0BA15900A60714 /* swutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = swutil.c; path = ./src/swutil.c; sourceTree = "<group>"; };
+		7BCD4B441A0BA15900A60714 /* swutil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swutil.cpp; path = ./src/swutil.cpp; sourceTree = "<group>"; };
 		7BCD4B451A0BA15900A60714 /* swutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = swutil.h; path = ./src/swutil.h; sourceTree = "<group>"; };
-		7BCD4B461A0BA15900A60714 /* tcpcomm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = tcpcomm.c; path = ./src/tcpcomm.c; sourceTree = "<group>"; };
+		7BCD4B461A0BA15900A60714 /* tcpcomm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tcpcomm.cpp; path = ./src/tcpcomm.cpp; sourceTree = "<group>"; };
 		7BCD4B471A0BA15900A60714 /* tcpcomm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tcpcomm.h; path = ./src/tcpcomm.h; sourceTree = "<group>"; };
 		7BCD4B481A0BA15900A60714 /* timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = timer.h; path = ./src/timer.h; sourceTree = "<group>"; };
-		7BCD4B491A0BA15900A60714 /* vid_vga.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = vid_vga.c; path = ./src/vid_vga.c; sourceTree = "<group>"; };
-		7BCD4B4A1A0BA15900A60714 /* video.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = video.c; path = ./src/video.c; sourceTree = "<group>"; };
+		7BCD4B491A0BA15900A60714 /* vid_vga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = vid_vga.cpp; path = ./src/vid_vga.cpp; sourceTree = "<group>"; };
+		7BCD4B4A1A0BA15900A60714 /* video.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = video.cpp; path = ./src/video.cpp; sourceTree = "<group>"; };
 		7BCD4B4B1A0BA15900A60714 /* video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = video.h; path = ./src/video.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,51 +142,51 @@
 				7BCD4B1B1A0BA15900A60714 /* pcsound.h */,
 				7BCD4B1C1A0BA15900A60714 /* std.h */,
 				7BCD4B1D1A0BA15900A60714 /* sw.h */,
-				7BCD4B1E1A0BA15900A60714 /* swasynio.c */,
+				7BCD4B1E1A0BA15900A60714 /* swasynio.cpp */,
 				7BCD4B1F1A0BA15900A60714 /* swasynio.h */,
-				7BCD4B201A0BA15900A60714 /* swauto.c */,
+				7BCD4B201A0BA15900A60714 /* swauto.cpp */,
 				7BCD4B211A0BA15900A60714 /* swauto.h */,
-				7BCD4B221A0BA15900A60714 /* swcollsn.c */,
+				7BCD4B221A0BA15900A60714 /* swcollsn.cpp */,
 				7BCD4B231A0BA15900A60714 /* swcollsn.h */,
-				7BCD4B241A0BA15900A60714 /* swconf.c */,
+				7BCD4B241A0BA15900A60714 /* swconf.cpp */,
 				7BCD4B251A0BA15900A60714 /* swconf.h */,
-				7BCD4B261A0BA15900A60714 /* swdisp.c */,
+				7BCD4B261A0BA15900A60714 /* swdisp.cpp */,
 				7BCD4B271A0BA15900A60714 /* swdisp.h */,
-				7BCD4B281A0BA15900A60714 /* swend.c */,
+				7BCD4B281A0BA15900A60714 /* swend.cpp */,
 				7BCD4B291A0BA15900A60714 /* swend.h */,
-				7BCD4B2A1A0BA15900A60714 /* swgames.c */,
+				7BCD4B2A1A0BA15900A60714 /* swgames.cpp */,
 				7BCD4B2B1A0BA15900A60714 /* swgames.h */,
-				7BCD4B2C1A0BA15900A60714 /* swground.c */,
+				7BCD4B2C1A0BA15900A60714 /* swground.cpp */,
 				7BCD4B2D1A0BA15900A60714 /* swground.h */,
-				7BCD4B2E1A0BA15900A60714 /* swgrpha.c */,
+				7BCD4B2E1A0BA15900A60714 /* swgrpha.cpp */,
 				7BCD4B2F1A0BA15900A60714 /* swgrpha.h */,
-				7BCD4B301A0BA15900A60714 /* swinit.c */,
+				7BCD4B301A0BA15900A60714 /* swinit.cpp */,
 				7BCD4B311A0BA15900A60714 /* swinit.h */,
-				7BCD4B321A0BA15900A60714 /* swmain.c */,
+				7BCD4B321A0BA15900A60714 /* swmain.cpp */,
 				7BCD4B331A0BA15900A60714 /* swmain.h */,
-				7BCD4B341A0BA15900A60714 /* swmove.c */,
+				7BCD4B341A0BA15900A60714 /* swmove.cpp */,
 				7BCD4B351A0BA15900A60714 /* swmove.h */,
-				7BCD4B361A0BA15900A60714 /* swobject.c */,
+				7BCD4B361A0BA15900A60714 /* swobject.cpp */,
 				7BCD4B371A0BA15900A60714 /* swobject.h */,
-				7BCD4B381A0BA15900A60714 /* swsound.c */,
+				7BCD4B381A0BA15900A60714 /* swsound.cpp */,
 				7BCD4B391A0BA15900A60714 /* swsound.h */,
-				7BCD4B3A1A0BA15900A60714 /* swsplat.c */,
+				7BCD4B3A1A0BA15900A60714 /* swsplat.cpp */,
 				7BCD4B3B1A0BA15900A60714 /* swsplat.h */,
-				7BCD4B3C1A0BA15900A60714 /* swstbar.c */,
+				7BCD4B3C1A0BA15900A60714 /* swstbar.cpp */,
 				7BCD4B3D1A0BA15900A60714 /* swstbar.h */,
-				7BCD4B3E1A0BA15900A60714 /* swsymbol.c */,
+				7BCD4B3E1A0BA15900A60714 /* swsymbol.cpp */,
 				7BCD4B3F1A0BA15900A60714 /* swsymbol.h */,
-				7BCD4B401A0BA15900A60714 /* swtext.c */,
+				7BCD4B401A0BA15900A60714 /* swtext.cpp */,
 				7BCD4B411A0BA15900A60714 /* swtext.h */,
-				7BCD4B421A0BA15900A60714 /* swtitle.c */,
+				7BCD4B421A0BA15900A60714 /* swtitle.cpp */,
 				7BCD4B431A0BA15900A60714 /* swtitle.h */,
-				7BCD4B441A0BA15900A60714 /* swutil.c */,
+				7BCD4B441A0BA15900A60714 /* swutil.cpp */,
 				7BCD4B451A0BA15900A60714 /* swutil.h */,
-				7BCD4B461A0BA15900A60714 /* tcpcomm.c */,
+				7BCD4B461A0BA15900A60714 /* tcpcomm.cpp */,
 				7BCD4B471A0BA15900A60714 /* tcpcomm.h */,
 				7BCD4B481A0BA15900A60714 /* timer.h */,
-				7BCD4B491A0BA15900A60714 /* vid_vga.c */,
-				7BCD4B4A1A0BA15900A60714 /* video.c */,
+				7BCD4B491A0BA15900A60714 /* vid_vga.cpp */,
+				7BCD4B4A1A0BA15900A60714 /* video.cpp */,
 				7BCD4B4B1A0BA15900A60714 /* video.h */,
 				7B4EB6101A03923700DF969E /* ./mac/config.h */,
 			);
@@ -197,10 +197,10 @@
 		7B4EB60F1A03921C00DF969E /* sdl */ = {
 			isa = PBXGroup;
 			children = (
-				7B4EB6051A03921900DF969E /* main.c */,
-				7B4EB6061A03921900DF969E /* pcsound.c */,
-				7B4EB6081A03921900DF969E /* timer.c */,
-				7B4EB6091A03921900DF969E /* video.c */,
+				7B4EB6051A03921900DF969E /* main.cpp */,
+				7B4EB6061A03921900DF969E /* pcsound.cpp */,
+				7B4EB6081A03921900DF969E /* timer.cpp */,
+				7B4EB6091A03921900DF969E /* video.cpp */,
 			);
 			name = sdl;
 			sourceTree = "<group>";
@@ -261,33 +261,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BCD4B5B1A0BA15900A60714 /* swstbar.c in Sources */,
-				7BCD4B561A0BA15900A60714 /* swmain.c in Sources */,
-				7BCD4B591A0BA15900A60714 /* swsound.c in Sources */,
-				7BCD4B531A0BA15900A60714 /* swground.c in Sources */,
-				7BCD4B611A0BA15900A60714 /* vid_vga.c in Sources */,
-				7BCD4B601A0BA15900A60714 /* tcpcomm.c in Sources */,
-				7BCD4B5D1A0BA15900A60714 /* swtext.c in Sources */,
-				7BCD4B521A0BA15900A60714 /* swgames.c in Sources */,
-				7BCD4B4C1A0BA15900A60714 /* swasynio.c in Sources */,
-				7BCD4B4F1A0BA15900A60714 /* swconf.c in Sources */,
-				7BCD4B5A1A0BA15900A60714 /* swsplat.c in Sources */,
-				7B4EB60B1A03921900DF969E /* pcsound.c in Sources */,
-				7B4EB60D1A03921900DF969E /* timer.c in Sources */,
-				7BCD4B4E1A0BA15900A60714 /* swcollsn.c in Sources */,
-				7BCD4B581A0BA15900A60714 /* swobject.c in Sources */,
-				7BCD4B5E1A0BA15900A60714 /* swtitle.c in Sources */,
-				7BCD4B511A0BA15900A60714 /* swend.c in Sources */,
-				7B4EB60E1A03921900DF969E /* video.c in Sources */,
-				7BCD4B571A0BA15900A60714 /* swmove.c in Sources */,
-				7BCD4B5F1A0BA15900A60714 /* swutil.c in Sources */,
-				7BCD4B4D1A0BA15900A60714 /* swauto.c in Sources */,
-				7B4EB60A1A03921900DF969E /* main.c in Sources */,
-				7BCD4B541A0BA15900A60714 /* swgrpha.c in Sources */,
-				7BCD4B5C1A0BA15900A60714 /* swsymbol.c in Sources */,
-				7BCD4B621A0BA15900A60714 /* video.c in Sources */,
-				7BCD4B501A0BA15900A60714 /* swdisp.c in Sources */,
-				7BCD4B551A0BA15900A60714 /* swinit.c in Sources */,
+				7BCD4B5B1A0BA15900A60714 /* swstbar.cpp in Sources */,
+				7BCD4B561A0BA15900A60714 /* swmain.cpp in Sources */,
+				7BCD4B591A0BA15900A60714 /* swsound.cpp in Sources */,
+				7BCD4B531A0BA15900A60714 /* swground.cpp in Sources */,
+				7BCD4B611A0BA15900A60714 /* vid_vga.cpp in Sources */,
+				7BCD4B601A0BA15900A60714 /* tcpcomm.cpp in Sources */,
+				7BCD4B5D1A0BA15900A60714 /* swtext.cpp in Sources */,
+				7BCD4B521A0BA15900A60714 /* swgames.cpp in Sources */,
+				7BCD4B4C1A0BA15900A60714 /* swasynio.cpp in Sources */,
+				7BCD4B4F1A0BA15900A60714 /* swconf.cpp in Sources */,
+				7BCD4B5A1A0BA15900A60714 /* swsplat.cpp in Sources */,
+				7B4EB60B1A03921900DF969E /* pcsound.cpp in Sources */,
+				7B4EB60D1A03921900DF969E /* timer.cpp in Sources */,
+				7BCD4B4E1A0BA15900A60714 /* swcollsn.cpp in Sources */,
+				7BCD4B581A0BA15900A60714 /* swobject.cpp in Sources */,
+				7BCD4B5E1A0BA15900A60714 /* swtitle.cpp in Sources */,
+				7BCD4B511A0BA15900A60714 /* swend.cpp in Sources */,
+				7B4EB60E1A03921900DF969E /* video.cpp in Sources */,
+				7BCD4B571A0BA15900A60714 /* swmove.cpp in Sources */,
+				7BCD4B5F1A0BA15900A60714 /* swutil.cpp in Sources */,
+				7BCD4B4D1A0BA15900A60714 /* swauto.cpp in Sources */,
+				7B4EB60A1A03921900DF969E /* main.cpp in Sources */,
+				7BCD4B541A0BA15900A60714 /* swgrpha.cpp in Sources */,
+				7BCD4B5C1A0BA15900A60714 /* swsymbol.cpp in Sources */,
+				7BCD4B621A0BA15900A60714 /* video.cpp in Sources */,
+				7BCD4B501A0BA15900A60714 /* swdisp.cpp in Sources */,
+				7BCD4B551A0BA15900A60714 /* swinit.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

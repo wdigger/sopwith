@@ -8,17 +8,17 @@ bin_PROGRAMS = @SOPWITH_BINS@
 EXTRA_PROGRAMS = sopwith gtksopwith
 
 COMMON_SOURCES =       \
-video.h	    swcollsn.c  swgames.h   swmain.h    swutil.h 		\
-font.h      swcollsn.h  swground.c  swtext.c    tcpcomm.c 		\
-pcsound.h   swconf.c    swground.h  swtext.h    swsound.c   tcpcomm.h 	\
-std.h       swconf.h    swgrpha.c   swmove.c    swsound.h   timer.h 	\
-sw.h        swdisp.c    swgrpha.h   swmove.h    swsymbol.c 		\
-swasynio.c  swdisp.h    swinit.c    swsymbol.h 				\
-swasynio.h  swend.c     swinit.h    swtitle.c 				\
-swauto.c    swend.h     swobject.c  swtitle.h 				\
-swauto.h    swgames.c   swmain.c    swobject.h  swutil.c		\
-swsplat.c   swsplat.h	swstbar.c   swstbar.h                           \
-video.c
+video.h       swcollsn.cpp  swgames.h     swmain.h      swutil.h                \
+font.h        swcollsn.h    swground.cpp  swtext.cpp    tcpcomm.cpp             \
+pcsound.h     swconf.cpp    swground.h    swtext.h      swsound.cpp   tcpcomm.h \
+std.h         swconf.h      swgrpha.cpp   swmove.cpp    swsound.h     timer.h   \
+sw.h          swdisp.cpp    swgrpha.h     swmove.h      swsymbol.cpp            \
+swasynio.cpp  swdisp.h      swinit.cpp    swsymbol.h                            \
+swasynio.h    swend.cpp     swinit.h      swtitle.cpp                           \
+swauto.cpp    swend.h       swobject.cpp  swtitle.h                             \
+swauto.h      swgames.cpp   swmain.cpp    swobject.h    swutil.cpp              \
+swsplat.cpp   swsplat.h     swstbar.cpp   swstbar.h                             \
+video.cpp
 
 # include dos port sources in distribution
 
@@ -28,11 +28,11 @@ EXTRA_DIST=$(DOS_FILES)
 
 # SDL build
 
-sopwith_SOURCES = $(COMMON_SOURCES) vid_vga.c
+sopwith_SOURCES = $(COMMON_SOURCES) vid_vga.cpp
 sopwith_LDADD = sdl/libsdlsopwith.a @SDL2_LIBS@
 
 # Gtk+ build
 
-gtksopwith_SOURCES = $(COMMON_SOURCES) vid_vga.c
+gtksopwith_SOURCES = $(COMMON_SOURCES) vid_vga.cpp
 gtksopwith_LDADD = gtk/libgtksopwith.a @GTK_LIBS@
 

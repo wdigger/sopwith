@@ -30,17 +30,17 @@
 
 typedef struct
 {
-	char *name;
+	const char *name;
 	enum {
 		CONF_BOOL,
 		CONF_INT
 	} type;
 	union {
 		void *v;
-		BOOL *b;
+		bool *b;
 		int *i;
 	} value;
-	char *description;
+	const char *description;
 } confoption_t;
 
 extern confoption_t confoptions[];

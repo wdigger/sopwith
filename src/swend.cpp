@@ -31,6 +31,7 @@
 #include "swtext.h"
 #include "swsound.h"
 #include "swutil.h"
+#include "swasynio.h"
 
 
 static void swreport()
@@ -41,10 +42,9 @@ static void swreport()
 	puts("\n");
 }
 
-void swend(char *msg, BOOL update)
+void swend(char *msg, bool update)
 {
-	register char *closmsg = NULL;
-	char *multclos(), *asynclos();
+  char *closmsg = NULL;
 
 	sound(0, 0, NULL);
 	swsound();
@@ -52,8 +52,8 @@ void swend(char *msg, BOOL update)
 	if (repflag)
 		swreport();
 
-        if (playmode == PLAYMODE_ASYNCH)
-		closmsg = asynclos();
+  if (playmode == PLAYMODE_ASYNCH)
+		closmsg = asynclos(false);
 
 	histend();
 
@@ -67,12 +67,12 @@ void swend(char *msg, BOOL update)
 		puts("\n");
 	}
 
-	inplay = FALSE;
+	inplay = false;
 
 	if (msg || closmsg)
-		exit(YES);
+		exit(true);
 	else
-		exit(NO);
+		exit(false);
 }
 
 
@@ -81,8 +81,8 @@ void swend(char *msg, BOOL update)
 
 void endgame(int targclr)
 {
-	register int winclr;
-	register OBJECTS *ob;
+  int winclr;
+  OBJECTS *ob;
 
 	if (playmode != PLAYMODE_ASYNCH)
 		winclr = 1;
@@ -117,10 +117,10 @@ void endgame(int targclr)
 
 void winner(OBJECTS * obp)
 {
-	register OBJECTS *ob = obp;
+  OBJECTS *ob = obp;
 
 	ob->ob_endsts = WINNER;
-	ob->ob_goingsun = TRUE;
+	ob->ob_goingsun = true;
 	ob->ob_dx = ob->ob_dy = ob->ob_ldx = ob->ob_ldy = 0;
 	ob->ob_state = FLYING;
 	ob->ob_life = MAXFUEL;

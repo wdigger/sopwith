@@ -257,10 +257,10 @@ typedef struct obj {                            /*  Object list             */
         struct obj    *ob_next;
         struct obj    *ob_prev;
         int            ob_index;
-        BOOL           ob_drwflg;
-        BOOL           ob_onmap;
-        void        ( *ob_drawf ) ();
-        BOOL        ( *ob_movef ) ();
+        bool           ob_drwflg;
+        bool           ob_onmap;
+        void        ( *ob_drawf ) (struct obj *);
+        bool        ( *ob_movef ) (struct obj *);
         struct obj    *ob_xnext;
         struct obj    *ob_xprev;
         int            ob_crashcnt;
@@ -282,9 +282,9 @@ typedef struct obj {                            /*  Object list             */
         int            ob_bsdelay;
         int            ob_plrnum;
         obendstatus_t  ob_endsts;
-        BOOL           ob_goingsun;
-	score_t	       ob_score;
-	score_t	       ob_lastscore;
+        bool           ob_goingsun;
+        score_t	       ob_score;
+        score_t	       ob_lastscore;
 }       OBJECTS;
 
 typedef struct {                                /*  Game structure          */
@@ -295,8 +295,8 @@ typedef struct {                                /*  Game structure          */
         int      ( *gm_specf ) ();
         int      gm_xtarg[MAX_TARG];
         int      gm_ttarg[MAX_TARG];
-	int     *gm_planes;
-	int     *gm_mult_planes;
+        int     *gm_planes;
+        int     *gm_mult_planes;
 }       GAMES;
 
 // sdh: made these into inline functions rather than ugly #define macros

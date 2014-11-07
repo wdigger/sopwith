@@ -54,10 +54,10 @@ unsigned int vid_pitch;
 
 void Vid_DispGround(GRNDTYPE *gptr)
 {
-	register GRNDTYPE *g = gptr;
-	register unsigned char *sptr;
-	register int x, y;
-	register int gc, gl;
+	GRNDTYPE *g = gptr;
+  unsigned char *sptr;
+  int x, y;
+  int gc, gl;
 
 	gl = *g;
 
@@ -88,10 +88,10 @@ void Vid_DispGround(GRNDTYPE *gptr)
 
 void Vid_DispGround_Solid(GRNDTYPE * gptr)
 {
-	register GRNDTYPE *g = gptr;
-	register unsigned char *sptr;
-	register int x, y;
-	register int gc, gl;
+  GRNDTYPE *g = gptr;
+  unsigned char *sptr;
+  int x, y;
+  int gc, gl;
 
 	gl = *g;
 
@@ -121,7 +121,7 @@ void Vid_DispGround_Solid(GRNDTYPE * gptr)
 
 void Vid_PlotPixel(int x, int y, int clr)
 {
-	register unsigned char *sptr 
+  unsigned char *sptr
 		= vid_vram + (SCR_HGHT-1 - y) * vid_pitch + x;
 
 	*sptr = clr & 3;
@@ -129,7 +129,7 @@ void Vid_PlotPixel(int x, int y, int clr)
 
 void Vid_XorPixel(int x, int y, int clr)
 {
-	register unsigned char *sptr 
+  unsigned char *sptr
 		= vid_vram + (SCR_HGHT-1 - y) * vid_pitch + x;
 
 	*sptr ^= clr & 3;
@@ -137,7 +137,7 @@ void Vid_XorPixel(int x, int y, int clr)
 
 int Vid_GetPixel(int x, int y)
 {
-	register unsigned char *sptr 
+  unsigned char *sptr 
 		= vid_vram + (SCR_HGHT-1 - y) * vid_pitch + x;
 
 	return *sptr;

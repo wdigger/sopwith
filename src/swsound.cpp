@@ -68,7 +68,7 @@ static char      *expltune[7] = {
         ""
 };
 #else
-static  char     *expltune[7] = {
+static  const char     *expltune[7] = {
        "b4/d8/d2/r16/c8/b8/a8/b4./c4./c+4./d4./",
        "e4/g8/g2/r16/>a8/<g8/e8/d2./",
        "b4/d8/d2/r16/c8/b8/a8/b4./c4./c+4./d4./",
@@ -88,7 +88,7 @@ static int titloctv;		/*  Octave                          */
 
 
 
-static char **tune;		/* Tune player statics              */
+static const char **tune;		/* Tune player statics              */
 static int line;
 static int place;
 static unsigned tunefreq;
@@ -127,7 +127,7 @@ static unsigned int swrand(unsigned int modulo)
 
 static TONETAB *allocton()
 {
-	register TONETAB *tt;
+	TONETAB *tt;
 
 	if (!freetone)
 		return 0;
@@ -150,8 +150,8 @@ static TONETAB *allocton()
 
 static void deallton(TONETAB * ttp)
 {
-	register TONETAB *tt = ttp;
-	register TONETAB *ttb = tt->tt_prev;
+  TONETAB *tt = ttp;
+  TONETAB *ttb = tt->tt_prev;
 
 	if (ttb)
 		ttb->tt_next = tt->tt_next;
@@ -171,8 +171,8 @@ static void deallton(TONETAB * ttp)
 
 void initsndt()
 {
-	register TONETAB *tt;
-	register int i;
+  TONETAB *tt;
+  int i;
 
 	for (i = 0, tt = tonetab; i < (SNDSIZE - 1); ++i, ++tt)
 		tt->tt_next = tt + 1;
@@ -256,7 +256,7 @@ void playnote()
 	static int noteoctavefactor;
 	static int dottednote;
 
-	BOOL firstplace = TRUE;
+	bool firstplace = true;
 
 	indexadj = 0;
 	durplace = 0;
@@ -282,7 +282,7 @@ void playnote()
 				continue;
 			break;
 		}
-		firstplace = FALSE;
+		firstplace = false;
 		if (charatplace == NOTEEND)
 			break;
 
@@ -360,7 +360,7 @@ void playnote()
 
 static void adjcont()
 {
-	register TONETAB *tt = lastobj->ob_sound;
+  TONETAB *tt = lastobj->ob_sound;
 
 	if (tt)
 		tone(tt->tt_tone + tt->tt_chng * soundticks);
@@ -454,7 +454,7 @@ static void soundadj()
 
 void swsound()
 {
-	register TONETAB *tt;
+	TONETAB *tt;
 
 	tt = frsttone;
 	while (tt) {
@@ -463,7 +463,7 @@ void swsound()
 	}
 
 	soundticks = 0;
-	titleflg = FALSE;
+	titleflg = false;
 
 	switch (soundtype) {
 
@@ -536,7 +536,7 @@ void sound(int type, int parm, OBJECTS * ob)
 			titlnote();
 			toneadj = NULL;
 			lastobj = NULL;
-			titleflg = TRUE;
+			titleflg = true;
 		}
 	} else if (type < soundtype) {
 		soundtype = type;
@@ -552,8 +552,8 @@ void sound(int type, int parm, OBJECTS * ob)
 
 void initsound(OBJECTS * obp, int type)
 {
-	register OBJECTS *ob;
-	register TONETAB *tt;
+	OBJECTS *ob;
+  TONETAB *tt;
 
 	if ((ob = obp)->ob_sound)
 		return;

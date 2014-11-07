@@ -45,13 +45,13 @@
 
 // sdh 28/10/2001: game options
 
-BOOL conf_missiles = 0;             // allow missiles: replaces missok
-BOOL conf_solidground = 0;          // draw ground solid like in sopwith 1
-BOOL conf_hudsplats = 0;            // splatted birds etc
-BOOL conf_wounded = 0;              // enable wounded planes
-BOOL conf_animals = 1;              // birds and oxes
-BOOL conf_harrykeys = 0;            // plane rotation relative to screen
-BOOL conf_medals = 0;
+bool conf_missiles = 0;             // allow missiles: replaces missok
+bool conf_solidground = 0;          // draw ground solid like in sopwith 1
+bool conf_hudsplats = 0;            // splatted birds etc
+bool conf_wounded = 0;              // enable wounded planes
+bool conf_animals = 1;              // birds and oxes
+bool conf_harrykeys = 0;            // plane rotation relative to screen
+bool conf_medals = 0;
 
 playmode_t playmode;		/* Mode of play                     */
 GAMES *currgame;		/* Game parameters and current game */
@@ -67,12 +67,12 @@ int initial_gamenum = 0;	/* Initial game number (user spec.) */
 int gmaxspeed, gminspeed;	/* Speed range based on game number */
 int targrnge;			/* Target range based on game number */
 
-BOOL disppos;			/* Display position flag            */
-BOOL titleflg;			/* Title flag                       */
+bool disppos;			/* Display position flag            */
+bool titleflg;			/* Title flag                       */
 int dispdbg;			/* Debug value to display           */
-BOOL soundflg;			/* Sound flag                       */
-BOOL repflag;			/* Report statistics flag           */
-BOOL inplay;			/* Game is in play                  */
+bool soundflg;			/* Sound flag                       */
+bool repflag;			/* Report statistics flag           */
+bool inplay;			/* Game is in play                  */
 
 int displx;			/* Display left and right           */
 
@@ -94,9 +94,9 @@ int rcompter[MAX_PLYR] = {	/* Computer plane territory         */
 OBJECTS *objsmax = 0;		/* Maximum object allocated         */
 int endcount;
 int player;			/* Pointer to player's object       */
-BOOL plyrplane;			/* Current object is player flag    */
-BOOL compplane;			/* Current object is a comp plane   */
-BOOL forcdisp;			/* Force display of ground          */
+bool plyrplane;			/* Current object is player flag    */
+bool compplane;			/* Current object is a comp plane   */
+bool forcdisp;			/* Force display of ground          */
 char *histin, *histout;		/* History input and output files   */
 unsigned explseed;		/* random seed for explosion        */
 

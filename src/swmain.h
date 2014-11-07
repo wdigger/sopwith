@@ -31,13 +31,13 @@
 
 #define MAX_NET_LAG 12
 
-extern BOOL conf_missiles;
-extern BOOL conf_solidground;
-extern BOOL conf_hudsplats;
-extern BOOL conf_wounded;
-extern BOOL conf_animals;
-extern BOOL conf_harrykeys;
-extern BOOL conf_medals;
+extern bool conf_missiles;
+extern bool conf_solidground;
+extern bool conf_hudsplats;
+extern bool conf_wounded;
+extern bool conf_animals;
+extern bool conf_harrykeys;
+extern bool conf_medals;
 
 extern OBJECTS *consoleplayer;
 extern playmode_t playmode;
@@ -51,12 +51,12 @@ extern int     gamenum;
 extern int     initial_gamenum;
 extern int     gmaxspeed, gminspeed;
 extern int     targrnge;
-extern BOOL    disppos;
-extern BOOL    titleflg;
+extern bool    disppos;
+extern bool    titleflg;
 extern int     dispdbg;
-extern BOOL    soundflg;
-extern BOOL    repflag;
-extern BOOL    inplay;
+extern bool    soundflg;
+extern bool    repflag;
+extern bool    inplay;
 extern int     displx;
 extern OBJECTS *nobjects;
 extern OBJECTS oobjects[MAX_PLYR];
@@ -68,9 +68,9 @@ extern int     rcompter[MAX_PLYR];
 extern OBJECTS *objsmax;
 extern int     endcount;
 extern int     player;
-extern BOOL    plyrplane;
-extern BOOL    compplane;
-extern BOOL    forcdisp;
+extern bool    plyrplane;
+extern bool    compplane;
+extern bool    forcdisp;
 extern char    *histin, *histout;
 extern unsigned explseed;
 extern int     keydelay;

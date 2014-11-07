@@ -87,9 +87,9 @@ void swputc(char c)
 	}
 }
 
-void swputs(char *sp)
+void swputs(const char *sp)
 {
-	register char *s;
+	const char *s;
 
 	for (s = sp; *s; ++s) {
 		swputc(*s);
@@ -156,7 +156,7 @@ void swdispd(int n, int size)
 {
 	int i = 0;
 	int d, t;
-	BOOL first = TRUE;
+	bool first = true;
 
 	// sdh 24/10/2001: make sure we use the main video buffer
 
@@ -168,7 +168,7 @@ void swdispd(int n, int size)
 	for (t = 10000; t > 1; n %= t, t /= 10) {
 		d = n / t;
 		if (d || !first) {
-			first = FALSE;
+			first = false;
 			swputc(d + '0');
 			++i;
 		}

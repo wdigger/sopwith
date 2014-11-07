@@ -61,7 +61,7 @@ static char *get_config_file()
 		static char *namebuf = NULL;
 
 		if (!namebuf) {
-			namebuf = malloc(strlen(config_file)
+			namebuf = (char*)malloc(strlen(config_file)
 					 + strlen(getenv("HOME")) + 5);
 			
 			sprintf(namebuf, "%s/%s", getenv("HOME"), config_file);
@@ -75,15 +75,15 @@ static char *get_config_file()
 }
 
 confoption_t confoptions[] = {
-    {"conf_missiles",     CONF_BOOL, {&conf_missiles},     "Missiles"},
-    {"conf_solidground",  CONF_BOOL, {&conf_solidground},  "Solid ground"},
-    {"conf_hudsplats",    CONF_BOOL, {&conf_hudsplats},    "HUD splats"},
-    {"conf_wounded",      CONF_BOOL, {&conf_wounded},      "Wounded planes"},
-    {"conf_animals",      CONF_BOOL, {&conf_animals},      "Oxen and birds"},
-    {"conf_harrykeys",    CONF_BOOL, {&conf_harrykeys},    "Harry keys mode"},
-    {"conf_medals",	  CONF_BOOL, {&conf_medals},	   "Medals"},
-    {"vid_fullscreen",    CONF_BOOL, {&vid_fullscreen},    "Run fullscreen"},
-    {"vid_double_size",   CONF_BOOL, {&vid_double_size},   "Scale window by 2x"},
+    {"conf_missiles",     confoption_t::CONF_BOOL, {&conf_missiles},     "Missiles"},
+    {"conf_solidground",  confoption_t::CONF_BOOL, {&conf_solidground},  "Solid ground"},
+    {"conf_hudsplats",    confoption_t::CONF_BOOL, {&conf_hudsplats},    "HUD splats"},
+    {"conf_wounded",      confoption_t::CONF_BOOL, {&conf_wounded},      "Wounded planes"},
+    {"conf_animals",      confoption_t::CONF_BOOL, {&conf_animals},      "Oxen and birds"},
+    {"conf_harrykeys",    confoption_t::CONF_BOOL, {&conf_harrykeys},    "Harry keys mode"},
+    {"conf_medals",       confoption_t::CONF_BOOL, {&conf_medals},	   "Medals"},
+    {"vid_fullscreen",    confoption_t::CONF_BOOL, {&vid_fullscreen},    "Run fullscreen"},
+    {"vid_double_size",   confoption_t::CONF_BOOL, {&vid_double_size},   "Scale window by 2x"},
 };
 
 int num_confoptions = sizeof(confoptions) / sizeof(*confoptions);
@@ -169,7 +169,7 @@ void swloadconf()
 			// found option
 
 			switch(confoptions[i].type) {
-			case CONF_BOOL:
+			case confoption_t::CONF_BOOL:
 				*confoptions[i].value.b = atoi(p) != 0;
 				break;
 			default:
@@ -227,7 +227,7 @@ void swsaveconf()
 			fprintf(fs, "\t");
 		
 		switch (confoptions[i].type) {
-		case CONF_BOOL:
+		case confoption_t::CONF_BOOL:
 			fprintf(fs, "%i", *confoptions[i].value.b);
 			break;
 		default:
@@ -272,7 +272,7 @@ void setconfig()
 
 			swposcur(35, 5+i);
 			switch (confoptions[i].type) {
-			case CONF_BOOL:
+			case confoption_t::CONF_BOOL:
 				swputs(*confoptions[i].value.b ? "on" : "off");
 				break;
 			default:
@@ -288,7 +288,7 @@ void setconfig()
 		Vid_Update();
 
 		if (ctlbreak())
-			swend(NULL, NO);
+			swend(NULL, false);
 
 		i = toupper(swgetc() & 0xff);
 
@@ -299,7 +299,7 @@ void setconfig()
 			i -= '1';
 
 			switch (confoptions[i].type) {
-			case CONF_BOOL:
+			case confoption_t::CONF_BOOL:
 				*confoptions[i].value.b
 					= !*confoptions[i].value.b;
 				break;

@@ -65,7 +65,7 @@ void commconnect(char *host)
 	{
 		char *p = strchr(host, ':');
 		if (p) {
-			realhost = malloc(p-host + 2);
+			realhost = (char*)malloc(p-host + 2);
 			strncpy(realhost, host, p-host);
 			realhost[p-host] = '\0';
 			port = atoi(p+1);

@@ -30,7 +30,7 @@
 #include "swmain.h"
 #include "swutil.h"
 
-static BOOL correction;		/*  Course correction flag        */
+static bool correction;		/*  Course correction flag        */
 static OBJECTS obs;		/*  Saved computer object         */
 static int courseadj;		/*  Course adjustment             */
 
@@ -40,7 +40,7 @@ int shoot(OBJECTS *obt)
 	int obx, oby, obtx, obty;
 	int nspeed, nangle;
 	int rprev;
-	register int r, i;
+  int r, i;
 
 	obsp = obs;
 	obtsp = *obt;
@@ -109,7 +109,7 @@ static void cleartargs()
 
 static void testtargs(int x, int y)
 {
-	register int i, xl, xr;
+	int i, xl, xr;
 
 	xl = x - 32 - gmaxspeed;
 	xr = x + 32 + gmaxspeed;
@@ -137,16 +137,16 @@ static void testtargs(int x, int y)
 // sdh: changed to tstcrash2 to stop conflicts with the other 
 // function with the same name in swcollsn.c
 
-static BOOL tstcrash2(OBJECTS *obp, int x, int y, int alt)
+static bool tstcrash2(OBJECTS *obp, int x, int y, int alt)
 {
-	register OBJECTS *ob;
-	register int i, xl, xr, xt, yt;
+  OBJECTS *ob;
+  int i, xl, xr, xt, yt;
 
 	if (alt > 50)
-		return FALSE;
+		return false;
 
 	if (alt < 22)
-		return TRUE;
+		return true;
 
 	ob = obp;
 	if (tl == -2)
@@ -162,18 +162,18 @@ static BOOL tstcrash2(OBJECTS *obp, int x, int y, int alt)
 		if (xt < xl)
 			continue;
 		if (xt > xr)
-			return FALSE;
+			return false;
 		yt = ob->ob_y + (ob->ob_state == STANDING ? 16 : 8);
 		if (y <= yt)
-			return TRUE;
+			return true;
 	}
-	return FALSE;
+	return false;
 }
 
-int aim(OBJECTS *obo, int ax, int ay, OBJECTS *obt, BOOL longway)
+int aim(OBJECTS *obo, int ax, int ay, OBJECTS *obt, bool longway)
 {
-	register OBJECTS *ob;
-	register int r, rmin, i, n=0;
+  OBJECTS *ob;
+  int r, rmin, i, n=0;
 	int x, y, dx, dy, nx, ny;
 	int nangle, nspeed;
 	static int cflaps[3] = { 0, -1, 1 };
@@ -181,7 +181,7 @@ int aim(OBJECTS *obo, int ax, int ay, OBJECTS *obt, BOOL longway)
 
 	ob = obo;
 
-	correction = FALSE;
+	correction = false;
 
 	if ((ob->ob_state == STALLED || ob->ob_state == WOUNDSTALL)
 	    && ob->ob_angle != (3 * ANGLES / 4)) {
@@ -200,14 +200,14 @@ int aim(OBJECTS *obo, int ax, int ay, OBJECTS *obt, BOOL longway)
 			if (!ob->ob_hitcount)
 				ob->ob_hitcount = (y > (MAX_Y - 50)) ? 2 : 1;
 			return (aim(ob, x, ob->ob_hitcount == 1
-				    ? (y + 25) : (y - 25), NULL, YES));
+				    ? (y + 25) : (y - 25), NULL, true));
 		}
 		ob->ob_hitcount = 0;
 		return (aim(ob, x + (dx < 0 ? 150 : -150),
 			    (y + 100 > MAX_Y - 50 - courseadj)
 		 		? MAX_Y - 50 - courseadj 
 				: y + 100, 
-			    NULL, YES));
+			    NULL, true));
 	} else {
 		if (!longway)
 			ob->ob_hitcount = 0;
@@ -341,7 +341,7 @@ int gohome(OBJECTS *ob)
          && abs(ob->ob_y - original_ob->ob_y) < HOME) {
 		if (plyrplane) {
 			initplyr(ob);
-			initdisp(YES);
+			initdisp(true);
 		} else if (compplane) {
 			initcomp(ob);
 		} else {
@@ -355,7 +355,7 @@ int gohome(OBJECTS *ob)
         if (ob->ob_state == WOUNDED && (countmove & 1))
                 return 0;
         else
-                return aim(ob, original_ob->ob_x, original_ob->ob_y, NULL, NO);
+                return aim(ob, original_ob->ob_x, original_ob->ob_y, NULL, false);
 }
 
 
@@ -363,28 +363,28 @@ int gohome(OBJECTS *ob)
 
 static void cruise(OBJECTS *ob)
 {
-	register int orgx;
+  int orgx;
 
 	courseadj = ((countmove & 0x001F) < 16) << 4;
 	orgx = oobjects[ob->ob_index].ob_x;
 	aim(ob, courseadj +
 		(orgx < (MAX_X / 3) ? (MAX_X / 3) :
 		 orgx > (2 * MAX_X / 3) ? (2 * MAX_X / 3) : orgx),
-		MAX_Y - 50 - (courseadj >> 1), NULL, NO);
+		MAX_Y - 50 - (courseadj >> 1), NULL, false);
 }
 
 void attack(OBJECTS *obp, OBJECTS *obt)
 {
-	register OBJECTS *ob;
+  OBJECTS *ob;
 
 	courseadj = ((countmove & 0x001F) < 16) << 4;
 	ob = obt;
 	if (ob->ob_speed)
 		aim(obp,
 		    ob->ob_x - ((CLOSE * COS(ob->ob_angle)) >> 8),
-		    ob->ob_y - ((CLOSE * SIN(ob->ob_angle)) >> 8), ob, NO);
+		    ob->ob_y - ((CLOSE * SIN(ob->ob_angle)) >> 8), ob, false);
 	else
-		aim(obp, ob->ob_x, ob->ob_y + 4, ob, NO);
+		aim(obp, ob->ob_x, ob->ob_y + 4, ob, false);
 }
 
 
@@ -401,8 +401,8 @@ void swauto(OBJECTS *ob)
 
 int range(int x, int y, int ax, int ay)
 {
-	register int dx, dy;
-	register int t;
+  int dx, dy;
+  int t;
 
 	dy = abs(y - ay);
 	dy += dy >> 1;

@@ -53,7 +53,7 @@ static void settimeout()
 	timeout_time = Timer_GetMS() + TIMEOUT_LEN_MS;
 }
 
-static BOOL timeout()
+static bool timeout()
 {
 	return Timer_GetMS() >= timeout_time;
 }
@@ -110,7 +110,7 @@ void asynput(int movekey)
 	sendshort(movekey);
 }
 
-char *asynclos(BOOL update)
+char *asynclos(bool update)
 {
 	commterm();
 	return NULL;
@@ -149,7 +149,7 @@ static void synchronize()
 	char *buf;
 	char *p;
 
-	buf = malloc(sizeof(PROTOHEADER) + 5);
+	buf = (char*)malloc(sizeof(PROTOHEADER) + 5);
 	sprintf(buf, PROTOHEADER "%i", player);
 
 	for (p = buf; *p; ++p)

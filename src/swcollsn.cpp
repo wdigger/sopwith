@@ -159,7 +159,7 @@ get_score_obj(OBJECTS *obp, int *reverse)
 /* Determine the object that receives a score if 'obp' is destriyed, and whether the score
 ** should be subtracted rather than added (iff reverse nonzero) */
 {
-	register OBJECTS *ob;
+	OBJECTS *ob;
 	OBJECTS *retval;
 	*reverse = 0;
 
@@ -176,7 +176,7 @@ get_score_obj(OBJECTS *obp, int *reverse)
 
 static void scoretarg(OBJECTS *obp, int score)
 {
-	register OBJECTS *ob;
+  OBJECTS *ob;
 	int reverse_score;
 
 	ob = get_score_obj(obp, &reverse_score);
@@ -187,9 +187,9 @@ static void scoretarg(OBJECTS *obp, int score)
 }
 
 
-static BOOL scorepenalty(obtype_t ttype, OBJECTS * ob, int score)
+static bool scorepenalty(obtype_t ttype, OBJECTS * ob, int score)
 {
-	register OBJECTS *obt;
+  OBJECTS *obt;
 
 	obt = ob;
 	if (ttype == SHOT || ttype == BOMB || ttype == MISSILE
@@ -200,9 +200,9 @@ static BOOL scorepenalty(obtype_t ttype, OBJECTS * ob, int score)
 			&& obt->ob_hitcount == FALLCOUNT))
 		&& !obt->ob_athome)) {
 		scoretarg(obt, score);
-		return TRUE;
+		return true;
 	}
-	return FALSE;
+	return false;
 }
 
 
@@ -212,7 +212,7 @@ static int crtdepth[8] = { 1, 2, 2, 3, 3, 2, 2, 1 };
 
 static void crater(OBJECTS * ob)
 {
-	register int i, x, y, ymin, ymax;
+	int i, x, y, ymin, ymax;
 	int xmin, xmax;
 
 	xmin = ob->ob_x + (ob->ob_newsym->w - 8) / 2;
@@ -228,7 +228,7 @@ static void crater(OBJECTS * ob)
 			ymin = y + 1;
 		ground[x] = ymin - 1;
 	}
-	forcdisp = TRUE;
+	forcdisp = true;
 }
 
 /* Determine whether the parameter is a shot and hasn't moved very much yet;
@@ -248,8 +248,8 @@ void blast_target(OBJECTS *ob, obtype_t type);
 
 static void swkill(OBJECTS * ob1, OBJECTS * ob2)
 {
-	register OBJECTS *ob, *obt;
-	register int i;
+  OBJECTS *ob, *obt;
+  int i;
 	obtype_t ttype;
 	obstate_t state;
 
@@ -306,7 +306,7 @@ static void swkill(OBJECTS * ob1, OBJECTS * ob2)
 		}
 
 		ob->ob_state = FINISHED;
-		ob->ob_onmap = FALSE;
+		ob->ob_onmap = false;
 		initexpl(ob, 0);
 
 		blast_target(ob, ttype);
@@ -438,8 +438,8 @@ static void swkill(OBJECTS * ob1, OBJECTS * ob2)
 
 void swcollsn()
 {
-	register OBJECTS *ob, *obp, **obkd, **obkr;
-	register int xmax, ymin, ymax, i;
+  OBJECTS *ob, *obp, **obkd, **obkr;
+  int xmax, ymin, ymax, i;
 	obtype_t otype;
 	int prevx1, prevx2;
 
@@ -495,8 +495,8 @@ void swcollsn()
 
 void tstcrash(OBJECTS * obp)
 {
-	register sopsym_t *sym = obp->ob_newsym;
-	register int x, y;
+  sopsym_t *sym = obp->ob_newsym;
+	int x, y;
 
 	for (x=0; x<sym->w; ++x) {
 		y = obp->ob_y - ground[x + obp->ob_x];
