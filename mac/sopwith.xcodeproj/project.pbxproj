@@ -385,9 +385,16 @@
 		7B4EB5BA1A0390D500DF969E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/include/SDL2,
+					"$(PROJECT_DIR)/mac",
+					/usr/local/include/SDL2,
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/opt/local/lib,
+					/usr/local/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -396,9 +403,16 @@
 		7B4EB5BB1A0390D500DF969E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/include/SDL2,
+					"$(PROJECT_DIR)/mac",
+					/usr/local/include/SDL2,
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/opt/local/lib,
+					/usr/local/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
